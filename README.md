@@ -606,7 +606,7 @@ Una pregunta realmente importante que hay que hacerse es **¿en que parte del co
   <p>Login de usuario agregando imagen de fondo justo después de la creación de los paneles</p>
 </div>
 
-Se puede observar que la imagen de fondo quedo encima del Label que daba el titulo y encima de los botones que habíamos puesto ahí. Y es por que Java **pondrá los elementos uno detrás de otro en el eje Z a medida que se vayan añadiendo.** Por lo que si queremos que nuestra imagen quede en el fondo tendremos que ponerla de ultimas justo después de los botones que habíamos incorporado:
+Se puede observar que la imagen de fondo quedo encima del Label que daba el titulo y encima de los botones que habíamos puesto ahí. Y es por que Java **pondrá los elementos uno detrás de otro en el eje Z a medida que se vayan añadiendo.** Por lo que si queremos que nuestra imagen quede en el fondo tendremos que ponerla de ultimas justo después de los últimos botones que habíamos adicionado en el panel pIzquierda:
 
 <div align="center">
   <img  src="./resources/ordenz.png">
@@ -633,6 +633,12 @@ La mejor forma es haciendolo en nuestro código y para esto necesitamos de un ob
   <p>Objeto Auxiliar</p>
 </div>
 
+Antes de poder realizar nuestra redimension necesitamos agregar una librería mas a nuestro código:
+
+```
+import java.awt.Image;
+```
+
 Para realizar esta redimension realizaremos este código justo encima de nuestra creación de nuestro JLabel que contiene la imagen de fondo:
 
 ```
@@ -642,16 +648,16 @@ lFondo = new JLabel();
 ...
 ```
 
-se puede ver que se esta realizando una ejemplificación de este objeto sin embargo no estamos enviando ninguna ruta, este esta recibiendo por parámetro otro objeto ImageIcon y se están llamando el siguiente método:
+se puede observar que se esta realizando una ejemplificación de un objeto decorador ImageIcon, sin embargo no está recibiendo ninguna ruta, este esta recibiendo por parámetro otro objeto ImageIcon y se están llamando el siguiente método:
 
-- **getImage:** que nos trae el Objeto **Image** de nuestro ImageIcon, esto se realiza para poder obtener las propiedades de Image como la **redimension** ya que el objeto ImageIcon no cuenta con esta propiedad dentro de su configuración.
+- **getImage:** que nos trae el Objeto **Image** de nuestro ImageIcon, esto se realiza para poder obtener las propiedades del objeto tipo **Image** como la **redimension** ya que el objeto ImageIcon no cuenta con esta propiedad dentro de su configuración.
 
 Una vez con nuestro objeto **Image** procedemos a llamar su método:
 
 - **getScaledInstance:** que se encarga de redimensionar nuestra imagen al tamaño que le demos y recibe estos parámetros:
   - **ancho:** Un numero entero que representa el nuevo ancho de la imagen
   - **alto:** Un numero entero que representa el nuevo alto de la imagen
-  - **sistema de escala:** Es un sistema interno de la clase Image que se encarga de re acomodar los pixeles, existen varias opciones para escalar los pixes (**SCALE_AREA_AVERAGING, SCALE_DEFAULT, SCALE_REPLICATE**) sin embargo el que por experiencia me da mejores resultados es el **SCALE_AREA_AVERAGING**
+  - **sistema de escala:** Es un sistema interno de la clase **Image** que se encarga de re acomodar los pixeles. Existen varias opciones para escalar los pixes (**SCALE_AREA_AVERAGING, SCALE_DEFAULT, SCALE_REPLICATE** etc). sin embargo el que por experiencia me da mejores resultados es el **SCALE_AREA_AVERAGING**
 
 Si ejecutamos nuestra aplicación podremos darnos cuenta que la imagen sigue igual **¿por qué?**, ya que nos falto cambiar el ImageIcon en nuestro label, ahora este debe incorporar el ImageIcon **iDimAux**
 
@@ -755,7 +761,7 @@ nuestros botones se verán asi:
   <p>Botones con incorporación de ImageIcon</p>
 </div>
 
-Sin embargo esto no es lo que queremos, para empezar queremos que nuestros botones quede transparente esto lo haremos con el siguiente método:
+Sin embargo esto no es lo que queremos, para empezar queremos que nuestros botones queden con un fondo transparente. Esto lo haremos con el siguiente método:
 
 ```
 bOpcion1.setContentAreaFilled(false);
@@ -820,19 +826,20 @@ En la primera clase se menciono este método pero es la hora de usarse, vamos a 
 setUndecorated(true);
 ```
 
-Notamos como nuestra interfaz se ha quitado nuestra barra por defecto de Java, ahora podemos borrar el código super, ya que no sera necesario.
-podemos notar algunas cosas:
+Notamos como nuestra interfaz se ha quitado la barra por defecto de Java, ahora podemos borrar la configuración **super**, ya que no sera necesaria ternerla.
 
-- **Nuestra aplicación ya no cierra** este problema se solucionara en otra clase, por ahora podemos cerrarlo desde la barra de tareas.
+Podemos notar algunas cosas:
+
+- **Nuestra aplicación ya no cierra** este problema se solucionará en otra clase, por ahora podemos cerrarlo desde la barra de tareas.
 
 <div align="center">
   <img  src="./resources/cerrar.png">
   <p>Cerrando desde la barra de tareas</p>
 </div>
 
-- **Nuestra aplicación no se mueve** de nuevo este problema se tratara en futuras clases.
+- **Nuestra aplicación no se mueve** de nuevo este problema se tratará en futuras clases.
 
-- **Ahora hay mas espacio** efectivamente ahora nuestra aplicación tiene un poc mas de espacio por lo que ahora haremos unas pequeñas correcciones de posición para aprovechar este espacio.
+- **Ahora hay mas espacio** efectivamente ahora nuestra aplicación tiene un poco mas de espacio por lo que ahora haremos unas pequeñas correcciones de posición para aprovechar este espacio. Recordar que aquí se muestra desordenado, sin embargo en el código estas modificaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
 
 ```
 lEslogan.setLocation((pDerecha.getWidth() - lEslogan.getWidth()) / 2, 60);
@@ -864,7 +871,7 @@ Finalmente nuestra interfaz de usuario con todos nuestros Objetos decoradores in
 
 Si has llegado hasta aquí **!! felicitaciones !!**
 
-Hemos creado nuestra primera interfaz gráfica con una vista amigable con nuestros usuarios y hemos aprendido como crear objetos gráficos y mostrarlos en pantalla y como incorporar objetos decoradores para que nuestras interfaces gráficas luzcan mucho mejor.
+Hemos creado nuestra primera interfaz gráfica con una vista amigable para nuestros usuarios y hemos aprendido como crear objetos gráficos y mostrarlos en pantalla y como incorporar objetos decoradores para que nuestras interfaces gráficas luzcan mucho mejor.
 
 En la siguiente clase vamos a hacer una parada sobre nuestras interfaces y vamos a explorar un poco nuestro código escrito ya que existen maneras de optimizar mucho más nuestro código.
 
