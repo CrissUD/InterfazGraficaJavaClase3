@@ -26,7 +26,7 @@ En esta clase vamos a crear objetos decoradores para que nuestro login tenga un 
 
 # Etapas de creación de Objetos decoradores
 
-Los objetos decoradores también tienen ciertas etapas en su creación aunque estas pueden variar un poco dependiendo de los casos, sin embargo las etapas mas comunes son:
+Los objetos decoradores también tienen ciertas etapas en su creación, aunque estas pueden variar un poco dependiendo de los casos, sin embargo las etapas mas comunes son:
 
 ## Declaración
 
@@ -107,7 +107,7 @@ En el anterior código se ve reflejada la incorporación de varios objetos de ti
 
 ## Colores con Transparencia
 
-Java también admite la creación de objetos rgba los cuales dan un gran uso y posibilidades para personalizar nuestra interfaz gráfica. Los pasos de la creación de ese tipo de colores es la misma que los colores personalizados que creemos salvo en la ejemplificación donde habrá un ligero cambio.
+Java también admite la creación de objetos rgba los cuales dan un gran uso y posibilidades para personalizar nuestra interfaz gráfica. Los pasos para la creación de ese tipo de colores es la misma que los colores personalizados que acabamos de crear. Salvo en la ejemplificación donde habrá un ligero cambio.
 
 <div align="center">
   <img  src="./resources/color.png">
@@ -177,7 +177,7 @@ Podemos observar que al momento de ejemplificar el objeto se realiza su respecti
 
 ## Incorporación
 
-A continuación mostramos las partes del código donde incorporamos nuestros objetos decoradores Font. Recordar que aquí se muestre desordenado, sin embargo en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
+A continuación mostramos las partes del código donde incorporamos nuestros objetos decoradores Font. Recordar que aquí se muestra desordenado, sin embargo en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
 
 ```
 lTituloApp.setBounds(100, 20, 220, 30);
@@ -203,7 +203,7 @@ Nuestra aplicación luce asi:
 
 # Cursor
 
-Los cursores son todas las formas que pueden tomar nuestro puntero del Mouse mientras pasa por alguna zona de nuestra ventana, es común ver un icono de una mano cuando se pasa por un botón, una cruz cuando se esta trabajando en un espacio de dibujos (Paint por dar un ejemplo) un icono de bloqueo cuando no se pueda dar click en una parte etc.
+Los cursores son todas las formas que pueden tomar nuestro puntero del Mouse mientras pasa por alguna zona de nuestra ventana, por ejemplo es común ver un icono de una mano cuando se pasa por un botón, una cruz cuando se esta trabajando en un espacio de dibujos (Paint por dar un ejemplo) un icono de bloqueo cuando no se pueda dar click en una parte etc.
 
 ### Declaración
 
@@ -361,7 +361,7 @@ border = BorderFactory.createBevelBorder(BevelBorder.RAISED, Color.LIGHT_GRAY, c
 Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createBevelBorder**.
 Este recibe por parámetros:
 
-- **Tipo borde Bevel:** recibe un tipo de borde tipo Bevel y en realidad lo que hace esta configuración es cambiar el orden de los colores que va a recibir por parámetro dependiendo de la elección.
+- **Tipo borde Bevel:** recibe un tipo de borde tipo Bevel (Lower o Raised) y en realidad lo que hace esta configuración es cambiar el orden de los colores que va a recibir por parámetro dependiendo de la elección.
 - **Color Externo1:** Recibe un objeto Color y representa el color externo ya sea del Lower o el Raise
 - **Color Interno1:** Recibe un objeto Color y representa el color interno que acompaña al color externo 1 ya sea del Lower o el Raise
 - **Color Externo2:** Recibe un objeto Color y representa el color externo del contrario a la opción escogida.
@@ -392,7 +392,7 @@ border = BorderFactory.createEtchedBorder(EtchedBorder.RAISED, Color.ORANGE, Col
 Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createEtchedBorder**.
 Este recibe por parámetros:
 
-- **Tipo borde Bevel:** recibe un tipo de borde tipo Etched (Lower, Raised) y en realidad lo que hace esta configuración es cambiar el orden de los colores que va a recibir por parámetro dependiendo de la elección.
+- **Tipo borde Etched:** recibe un tipo de borde tipo Etched (Lower, Raised) y en realidad lo que hace esta configuración es cambiar el orden de los colores que va a recibir por parámetro dependiendo de la elección.
 - **Color Externo:** Recibe un objeto Color y representa el color externo.
 - **Color Interno:** Recibe un objeto Color y representa el color interno.
 
@@ -405,7 +405,7 @@ Este recibe por parámetros:
 
 ### **MatteBorder**
 
-Este es uno de los bordes más usados y aunque su configuración es simple se puede sacar gran provecho de este, dibuja una linea en los lados que nosotros queramos, por ejemplo para un panel en la parte izquierda seria bueno un borde en la parte derecha nada mas indicando la separación, bueno con este tipo de Border se puede lograr.
+Este es uno de los bordes más usados y aunque su configuración es simple se puede sacar gran provecho de este. Dibuja una linea en los lados que nosotros queramos, por ejemplo para un panel en la parte izquierda seria bueno un borde en la parte derecha nada mas indicando la separación y con este tipo de Border se puede lograr.
 
 ```
 border = BorderFactory.createMatteBorder(0, 0, 3, 0, colorAzul);
@@ -500,7 +500,7 @@ Hasta el momento nuestra interfaz estará así:
 
 # ImagenIcon
 
-Las imágenes en nuestras interfaces son quizás el objeto decorador determinante para que nuestras interfaces gráficas luzcan mucho mas amigable con nuestros usuarios. A continuación veremos la incorporación de estos objetos decoradores en nuestra interfaz de Login para resaltar su importancia.
+Las imágenes en nuestras interfaces son quizás el objeto decorador determinante para que nuestras interfaces gráficas luzcan mucho mas amigable con nuestros usuarios. A continuación veremos la creación de estos objetos decoradores y la incorporación en nuestra interfaz de Login para resaltar su importancia.
 
 ## Antes de comenzar
 
@@ -550,7 +550,7 @@ iCerrar = new ImageIcon("Clase3/resources/img/cerrar.png");
 Se puede observar que al momento de ejemplificar el objeto decorador ImageIcon, este recibe por parámetro un String que en realidad representa
 la dirección donde esta contenida la imagen.
 
-**Una cosa importante que hay que resaltar es que la dirección puede variar entre editores de código, por ejemplo estas direcciónes funcionan en el editor de texto Visual Studio Code. Pero en NetBeans por ejemplo habría que quitar en la dirección la Clase3/ y empezar por resources/..**
+**Una cosa importante que hay que resaltar es que la dirección puede variar entre editores de código, por ejemplo estas direcciónes funcionan en el editor de texto Visual Studio Code. Pero en NetBeans por ejemplo habría que quitar en la dirección la parte "Clase3/" y empezar por "resources/.."**
 
 # Incorporación
 
@@ -576,7 +576,7 @@ Asi quedaría nuestra interfaz:
 
 <div align="center">
   <img  src="./resources/interfaz5.png">
-  <p>Login de usuario quitando color de fondo al pIzquierda</p>
+  <p>Login de usuario cambiando el color de fondo al pIzquierda</p>
 </div>
 
 Ahora vamos a Ejemplificar y configurar nuestro objeto JLabel.
@@ -609,7 +609,7 @@ Una pregunta realmente importante que hay que hacerse es **¿en que parte del co
 Se puede observar que la imagen de fondo quedo encima del Label que daba el titulo y encima de los botones que habíamos puesto ahí. Y es por que Java **pondrá los elementos uno detrás de otro en el eje Z a medida que se vayan añadiendo.** Por lo que si queremos que nuestra imagen quede en el fondo tendremos que ponerla de ultimas justo después de los botones que habíamos incorporado:
 
 <div align="center">
-  <img  src="./resources/ordenZ.png">
+  <img  src="./resources/ordenz.png">
   <p>Orden en código de elementos en pIzquierda para que la imagen quede en el fondo de nuestra ventana</p>
 </div>
 
