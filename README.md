@@ -403,8 +403,8 @@ Podemos observar que para crear el borde tenemos que llamar primero a la clase *
 Este recibe por parámetros:
 
 - **Tipo borde Etched:** recibe un tipo de borde tipo Etched (Lower, Raised) y en realidad lo que hace esta configuración es cambiar el orden de los colores que va a recibir por parámetro dependiendo de la elección.
-- **Color Externo:** Recibe un objeto decorador Color y representa el color externo.
-- **Color Interno:** Recibe un objeto decorador Color y representa el color interno.
+- **Color Externo:** Recibe un objeto decorador tipo Color y representa el color externo.
+- **Color Interno:** Recibe un objeto decorador tipo Color y representa el color interno.
 
 #### Ejemplo
 
@@ -448,7 +448,7 @@ border = BorderFactory.createDashedBorder(colorAzul, 2, 3, 2, true);
 Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createDashedBorder**.
 Este recibe por parámetros:
 
-- **Color del borde:** recibe un objeto tipo Color y representa el color del borde.
+- **Color del borde:** recibe un objeto decorador tipo Color y representa el color del borde.
 - **grosor de la linea:** recibe un numero entero que indica el grosor de la linea.
 - **largo de las lineas:** recibe un numero entero que indica el largo de cada una de las lineas intermitentes.
 - **Espacio entre lineas:** recibe un numero entero que indica el espacio que hay entre las lineas.
@@ -562,9 +562,9 @@ la dirección donde esta contenida la imagen.
 
 **Una cosa importante que hay que resaltar es que la dirección puede variar entre editores de código, por ejemplo estas direcciónes funcionan en el editor de texto Visual Studio Code. Pero en NetBeans por ejemplo habría que quitar en la dirección la parte "Clase3/" y empezar por "resources/.."**
 
-# Incorporación
+## Incorporación
 
-Muchas veces queremos incorporar nuestras imágenes a nuestra ventana y no necesariamente incorporarlas a un botón, un JTextField etc. Una manera de realizar esto es mediante la creación de labels que contengan estas imágenes. Por lo que vamos a crear
+Muchas veces queremos incorporar nuestras imágenes a nuestra ventana y no necesariamente incorporarlas a un botón, un JTextField etc. Una manera de realizar esto es mediante la creación de labels que contengan estas imágenes. Ya que los JLabel por defecto traen un fondo transparente y esto sera de gran utilidad. Por lo que vamos a crear nuestros JLabel correspondientes:
 
 ## Declaración objetos JLabel
 
