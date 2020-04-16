@@ -10,7 +10,7 @@ Curso propuesto por el grupo de trabajo Semana de Ingenio y Diseño (**SID**) de
 
 ## Objetivos
 
-- Identificar las formas de crear los objetos decoradores y como añadirlos en nuestros objetos gráficos para dar un mejor aspecto a nuestras clases UI.
+- Identificar las formas de crear los objetos decoradores y como incorporarlos en nuestros objetos gráficos para dar un mejor aspecto a nuestras clases UI.
 - Reconocer la importancia de los objetos decoradores y el papel que toman para que una interfaz gráfica sea mas amigable con los usuarios.
 
 # Antes de comenzar
