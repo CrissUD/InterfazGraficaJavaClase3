@@ -59,6 +59,16 @@ La incorporación se realiza cuando un objeto gráfico por medio de su configura
   <p>Incorporación de un objeto decorador</p>
 </div>
 
+# Creación de objetos Decoradores.
+
+En esta sección aprenderemos la forma de crear objetos Decoradores para ser incorporados, basándonos en los 3 pasos que acabamos de ver. Los objetos explicados a continuación serán:
+
+- **Color**
+- **Font**
+- **Cursor**
+- **Border**
+- **ImageIcon**
+
 # Color
 
 Los objetos decoradores de color cumplen la función de provicionarle color (Valga la redundancia) a nuestros objetos gráficos en pantalla.
