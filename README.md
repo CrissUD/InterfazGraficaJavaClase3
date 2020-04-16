@@ -510,7 +510,7 @@ Hasta el momento nuestra interfaz estará así:
 
 # ImagenIcon
 
-Las imágenes en nuestras interfaces son quizás el objeto decorador determinante para que nuestras interfaces gráficas luzcan mucho mas amigable con nuestros usuarios. A continuación veremos la creación de estos objetos decoradores y la incorporación en nuestra interfaz de Login para resaltar su importancia.
+Las imágenes en nuestras ventanas son quizás el objeto decorador determinante para que nuestras interfaces gráficas luzcan mucho mas amigable con nuestros usuarios. A continuación veremos la creación de estos objetos decoradores y la incorporación en nuestra interfaz de Login para resaltar su importancia.
 
 ## Antes de comenzar
 
