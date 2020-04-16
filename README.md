@@ -304,7 +304,7 @@ borde= BorderFactory.createLineBorder(colorAzul, 2, true);
 Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createLineBorder**.
 Los parámetros que recibe son:
 
-- **Color de linea:** recibe un objeto decorador Color y representa el color de la linea.
+- **Color de linea:** recibe un objeto decorador tipo Color y representa el color de la linea.
 - **Grosor:** recibe un numero entero que representa el grosor de la linea.
 - **Bordes redondos:** recibe un booleano para indicar si quiere que las esquinas del borde estén redondeadas o no. Asi pongamos True el cambio sera muy mínimo, no te preocupes si no notas el cambio.
 
@@ -372,10 +372,10 @@ Podemos observar que para crear el borde tenemos que llamar primero a la clase *
 Este recibe por parámetros:
 
 - **Tipo borde Bevel:** recibe un tipo de borde tipo Bevel (Lower o Raised) y en realidad lo que hace esta configuración es cambiar el orden de los colores que va a recibir por parámetro dependiendo de la elección.
-- **Color Externo1:** Recibe un objeto Color y representa el color externo ya sea del Lower o el Raise
-- **Color Interno1:** Recibe un objeto Color y representa el color interno que acompaña al color externo 1 ya sea del Lower o el Raise
-- **Color Externo2:** Recibe un objeto Color y representa el color externo del contrario a la opción escogida.
-- **Color Interno2:** Recibe un objeto Color y representa el color interno que acompaña al color externo 2.
+- **Color Externo1:** Recibe un objeto decorador tipo Color y representa el color externo ya sea del Lower o el Raise
+- **Color Interno1:** Recibe un objeto decorador tipo Color y representa el color interno que acompaña al color externo 1 ya sea del Lower o el Raise
+- **Color Externo2:** Recibe un objeto decorador tipo Color y representa el color externo del contrario a la opción escogida.
+- **Color Interno2:** Recibe un objeto decorador tipo Color y representa el color interno que acompaña al color externo 2.
 
 Cabe destacar que con este borde podemos buscar el efecto de **Hundido** o **Encima** o también buscar otros efectos con la combinación de varios colores.
 
@@ -403,8 +403,8 @@ Podemos observar que para crear el borde tenemos que llamar primero a la clase *
 Este recibe por parámetros:
 
 - **Tipo borde Etched:** recibe un tipo de borde tipo Etched (Lower, Raised) y en realidad lo que hace esta configuración es cambiar el orden de los colores que va a recibir por parámetro dependiendo de la elección.
-- **Color Externo:** Recibe un objeto Color y representa el color externo.
-- **Color Interno:** Recibe un objeto Color y representa el color interno.
+- **Color Externo:** Recibe un objeto decorador Color y representa el color externo.
+- **Color Interno:** Recibe un objeto decorador Color y representa el color interno.
 
 #### Ejemplo
 
@@ -428,7 +428,7 @@ Este recibe por parámetros:
 - **grosor en la linea izquierda:** recibe un numero entero que indica el grosor en la linea izquierda.
 - **grosor en la linea inferior:** recibe un numero entero que indica el grosor en la linea inferior.
 - **grosor en la linea derecha:** recibe un numero entero que indica el grosor en la linea derecha.
-- **Color del borde:** recibe un objeto tipo Color y representa el color del borde.
+- **Color del borde:** recibe un objeto decorador tipo Color y representa el color del borde.
 
 #### Ejemplo
 
@@ -439,7 +439,7 @@ Este recibe por parámetros:
 
 ### **DashedBorder**
 
-Dibuja un tipo de borde con una linea punteada o intermitente para separa el componente.
+Dibuja un tipo de borde con una linea punteada o intermitente para limitar el objeto gráfico.
 
 ```
 border = BorderFactory.createDashedBorder(colorAzul, 2, 3, 2, true);
