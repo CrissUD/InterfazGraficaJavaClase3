@@ -90,7 +90,7 @@ Muchas veces vamos a querer colores que Java no trae por defecto y para esto nec
 
 ### Declaración
 
-```
+```typescript
 private Color colorAzul, colorGrisOscuro;
 ```
 
@@ -98,7 +98,7 @@ La variable (objeto) que creemos para los objetos Color empezaran con color en m
 
 ### Ejemplificación
 
-```
+```typescript
 colorAzul = new Color(60, 78, 120);
 colorGrisOscuro = new Color(80, 80, 80);
 ```
@@ -107,7 +107,7 @@ Podemos observar que la notación para la configuración de un color esta basado
 
 ### Incorporación
 
-```
+```typescript
 tNombreUsuario.setForeground(colorGrisOscuro);
 tNombreUsuario.setBackground(Color.WHITE);
 tNombreUsuario.setCaretColor(colorAzul);
@@ -129,7 +129,7 @@ El ultimo parámetro representa el alfa y es un numero flotante que va desde 0 h
 
 A continuación mostramos las partes del código donde se incorporará nuestros colores personalizados a los objetos gráficos. cabe destacar que aunque aquí se muestre desordenado, en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
 
-```
+```typescript
 lEslogan.setForeground(colorGrisOscuro);
 lTituloLogin.setForeground(colorGrisOscuro);
 lNotificaciones.setForeground(colorGrisOscuro);
@@ -161,7 +161,7 @@ A continuación crearemos nuestros objetos Font:
 
 ## Declaración
 
-```
+```typescript
 private Font fontTPrincipal, fontTitulo, fontSubtitulo;
 ```
 
@@ -169,7 +169,7 @@ La variable (objeto) que creemos para los objetos Font empezaran con font en min
 
 ## Ejemplificación
 
-```
+```typescript
 fontTPrincipal = new Font("Rockwell Extra Bold", Font.PLAIN, 20);
 fontTitulo = new Font("Montserrat", Font.PLAIN, 18);
 fontSubtitulo = new Font("Forte", Font.PLAIN, 13);
@@ -189,7 +189,7 @@ Podemos observar que al momento de ejemplificar el objeto se realiza su respecti
 
 A continuación mostramos las partes del código donde incorporamos nuestros objetos decoradores Font. Recordar que aquí se muestra desordenado, sin embargo en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
 
-```
+```typescript
 lTituloApp.setBounds(100, 20, 220, 30);
 lTituloApp.setFont(fontTPrincipal);
 lEslogan.setFont(fontSubtitulo);
@@ -217,7 +217,7 @@ Los cursores son todas las formas que pueden tomar nuestro puntero del Mouse mie
 
 ### Declaración
 
-```
+```typescript
 private Cursor cMano;
 ```
 
@@ -225,7 +225,7 @@ La variable (objeto) que creemos para los objetos Cursor empezaran con c en min�
 
 ### Ejemplificación
 
-```
+```typescript
 cMano = new Cursor(Cursor.HAND_CURSOR);
 ```
 
@@ -246,7 +246,7 @@ Java proporciona una totalidad de 15 opciones de cursores para incorporar en nue
 
 A continuación mostramos las partes del código donde incorporamos nuestros objetos decoradores Cursor. Recordar que aquí se muestra desordenado, sin embargo en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
 
-```
+```typescript
 bEntrar.setCursor(cMano);
 bCerrar.setCursor(cMano);
 bRegistrarse.setCursor(cMano);
@@ -275,7 +275,7 @@ A continuación mostraremos los bordes mas importantes y cabe resaltar que la de
 
 ## Declaración
 
-```
+```typescript
 private Border border;
 ```
 
@@ -289,7 +289,7 @@ A continuación mostraremos los diferentes bordes que pueden crearse usando nues
 
 Antes de mostrar los diferentes bordes debemos implementar la librería **borderFactory** de Swing que nos dará la posibilidad de crear nuestros borders.
 
-```
+```typescript
 import javax.swing.BorderFactory;
 ```
 
@@ -297,8 +297,8 @@ import javax.swing.BorderFactory;
 
 Dibuja en los limites del objeto gráfico un borde con una linea:
 
-```
-borde= BorderFactory.createLineBorder(colorAzul, 2, true);
+```typescript
+borde = BorderFactory.createLineBorder(colorAzul, 2, true);
 ```
 
 Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createLineBorder**.
@@ -321,7 +321,7 @@ Dibuja un borde basado en sombras para crear un efecto en el cual el objeto grá
 
 Una desventaja de este tipo de bordes es que solo se notara cuando la ventana o panel donde esta el objeto gráfico tiene el color por defecto (gris) de lo contrario solo se vera con dos lineas en la parte izquierda y superior.
 
-```
+```typescript
 border = BorderFactory.createLoweredBevelBorder();
 ```
 
@@ -340,7 +340,7 @@ Dibuja un borde basado en sombras para crear un efecto en el cual el objeto grá
 
 De nuevo la desventaja de este tipo de bordes es que solo se notara cuando la ventana o panel donde esta el objeto gráfico tiene el color por defecto (gris) de lo contrario solo se vera con dos lineas en la parte derecha e inferior.
 
-```
+```typescript
 border = BorderFactory.createRaisedBevelBorder();
 ```
 
@@ -364,8 +364,14 @@ Una buena solución al las desventajas de los bordes anteriores puede ser este b
 
 De igual manera este tiene dos variaciones **BevelBorder** y **SoftBevelBorder** que como comentamos da un suavizado en las esquinas pero el cambio no es muy notorio.
 
-```
-border = BorderFactory.createBevelBorder(BevelBorder.RAISED, Color.LIGHT_GRAY, colorGrisOscuro, Color.LIGHT_GRAY, Color.WHITE);
+```typescript
+border = BorderFactory.createBevelBorder(
+  BevelBorder.RAISED,
+  Color.LIGHT_GRAY,
+  colorGrisOscuro,
+  Color.LIGHT_GRAY,
+  Color.WHITE
+);
 ```
 
 Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createBevelBorder**.
@@ -395,7 +401,7 @@ Cabe destacar que con este borde podemos buscar el efecto de **Hundido** o **Enc
 
 Este tipo de borde dibuja 2 LineBorder en el objeto gráfico dejando así una linea interna y una linea externa. Este tipo de bordes da un buen efecto de difuminado pequeño o de iluminado si se usan los colores correctos.
 
-```
+```typescript
 border = BorderFactory.createEtchedBorder(EtchedBorder.RAISED, Color.ORANGE, Color.YELLOW);
 ```
 
@@ -417,7 +423,7 @@ Este recibe por parámetros:
 
 Este es uno de los bordes más usados y aunque su configuración es simple se puede sacar gran provecho de este. Dibuja una linea en los lados que nosotros queramos, por ejemplo para un panel en la parte izquierda seria bueno un borde en la parte derecha nada mas indicando la separación y con este tipo de Border se puede lograr.
 
-```
+```typescript
 border = BorderFactory.createMatteBorder(0, 0, 3, 0, colorAzul);
 ```
 
@@ -441,7 +447,7 @@ Este recibe por parámetros:
 
 Dibuja un tipo de borde con una linea punteada o intermitente para limitar el objeto gráfico.
 
-```
+```typescript
 border = BorderFactory.createDashedBorder(colorAzul, 2, 3, 2, true);
 ```
 
@@ -489,11 +495,11 @@ Este recibe por parámetros:
 
 A continuación mostramos el borde que usaremos para nuestra ventana y las incorporaciones de este en nuestro código. También mostraremos algunas correcciones de nuestros objetos gráficos para que tengan un mejor aspecto con la incorporación de nuestro borde. Recordar que aquí se muestra desordenado, sin embargo en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
 
-```
+```typescript
 border = BorderFactory.createMatteBorder(0, 0, 2, 0, colorAzul);
 ```
 
-```
+```typescript
 tNombreUsuario.setSize(260, 40);
 tNombreUsuario.setBorder(border);
 tClaveUsuario.setSize(260, 40);
@@ -534,7 +540,7 @@ y adentro creamos una carpeta llamada **img** allí es donde guardaremos nuestra
 
 ## Declaración
 
-```
+```typescript
 private ImageIcon iFondo, iSvg, iLogo, iUsuario, iClave, iPunto, iFacebook, iTwitter, iYoutube, iCerrar, iDimAux;
 ```
 
@@ -544,7 +550,7 @@ La variable (objeto) que creemos para los objetos ImageIcon empezaran con i en m
 
 A continuación mostramos la ejemplificación y configuración de nuestros objetos Decoradores tipo ImageIcon:
 
-```
+```typescript
 iFondo = new ImageIcon("Clase3/resources/img/fondo.png");
 iLogo = new ImageIcon("Clase3/resources/img/logo.png");
 iUsuario = new ImageIcon("Clase3/resources/img/usuario.png");
@@ -568,7 +574,7 @@ Muchas veces queremos incorporar nuestras imágenes a nuestra ventana y no neces
 
 ## Declaración objetos JLabel
 
-```
+```typescript
 private JLabel lFondo, lSvg, lLogo, lUsuario, lClave, lFacebook, lTwitter, lYoutube;
 ```
 
@@ -578,7 +584,7 @@ Vamos a ver el ejemplo con uno de ellos por ahora para explicar unos **aspectos 
 
 Vamos a añadir un fondo a nuestra interfaz, lo primero que haremos es poner el color de fondo de nuestro pIzquierda a blanco:
 
-```
+```typescript
 pIzquierda.setBackground(Color.white);
 ```
 
@@ -596,7 +602,7 @@ Quizás te estes preguntando en este momento:
 
 Esto es debido a que los JPanel no tienen la propiedad de incorporar una imagen. Por eso lo haremos por medio de un JLabel.
 
-```
+```typescript
 lFondo = new JLabel();
 lFondo.setBounds(0, 0, 600, 600);
 lFondo.setIcon(iFondo);
@@ -645,13 +651,13 @@ La mejor forma es haciendolo en nuestro código y para esto necesitamos de un ob
 
 Antes de poder realizar nuestra redimension necesitamos agregar una librería mas a nuestro código:
 
-```
+```typescript
 import java.awt.Image;
 ```
 
 Para realizar esta redimension realizaremos este código justo encima de nuestra creación de nuestro JLabel que contiene la imagen de fondo:
 
-```
+```typescript
 iDimAux = new ImageIcon(iFondo.getImage().getScaledInstance(600, 600, Image.SCALE_AREA_AVERAGING));
 
 lFondo = new JLabel();
@@ -671,7 +677,7 @@ Una vez con nuestro objeto **Image** procedemos a llamar su método:
 
 Si ejecutamos nuestra aplicación podremos darnos cuenta que la imagen sigue igual **¿por qué?**, ya que nos falto cambiar el ImageIcon en nuestro label, ahora este debe incorporar el ImageIcon **iDimAux**
 
-```
+```typescript
 lFondo.setIcon(iDimAux);
 ```
 
@@ -686,7 +692,7 @@ Y ahora nuestra interfaz se vera asi:
 
 A continuación vamos a mostrar la creación de los objetos JLabel que incorporan nuestras imágenes repitiendo el proceso que vimos anteriormente. Recordar que aunque se muestre el código aquí en desorden en la aplicación se ponen en el orden de tal manera que tenemos presente la organización de objetos con respecto al eje Z.
 
-```
+```typescript
 iDimAux = new ImageIcon(iLogo.getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING));
 
 lLogo = new JLabel();
@@ -695,7 +701,7 @@ lLogo.setIcon(iDimAux);
 pIzquierda.add(lLogo);
 ```
 
-```
+```typescript
 iDimAux = new ImageIcon(iSvg.getImage().getScaledInstance(500, 345, Image.SCALE_AREA_AVERAGING));
 
 lSvg = new JLabel();
@@ -704,7 +710,7 @@ lSvg.setIcon(iDimAux);
 pIzquierda.add(lSvg);
 ```
 
-```
+```typescript
 iDimAux = new ImageIcon(iFacebook.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
 lFacebook = new JLabel();
@@ -727,7 +733,7 @@ lYoutube.setIcon(iDimAux);
 pIzquierda.add(lYoutube);
 ```
 
-```
+```typescript
 iDimAux = new ImageIcon(iUsuario.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
 lUsuario = new JLabel();
@@ -756,7 +762,7 @@ Vamos a empezar por nuestros botones opciones, la imagen que queremos incorporar
 
 para esto vamos a redimensionar nuestra imagen e incorporarla en nuestros botones:
 
-```
+```typescript
 iDimAux = new ImageIcon(iPunto.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING));
 
 bOpcion1.setIcon(iDimAux);
@@ -773,7 +779,7 @@ nuestros botones se verán asi:
 
 Sin embargo esto no es lo que queremos, para empezar queremos que nuestros botones queden con un fondo transparente. Esto lo haremos con el siguiente método:
 
-```
+```typescript
 bOpcion1.setContentAreaFilled(false);
 bOpcion2.setContentAreaFilled(false);
 bOpcion2.setContentAreaFilled(false);
@@ -790,7 +796,7 @@ Nuestros botones ahora están asi:
 
 Sin embargo tienen unas lineas que rodean a nuestra imágen que no queremos ver, esto es por que por defecto los botones tienen un borde, debemos quitarselo y ademas no le hemos quitado la propiedad focusable:
 
-```
+```typescript
 bOpcion1.setFocusable(false);
 bOpcion1.setBorder(null);
 
@@ -808,7 +814,7 @@ bOpcion2.setBorder(null);
 
 Ya esta hecho ! ahora haremos lo mismo para nuestro botón bCerrar:
 
-```
+```typescript
 iDimAux = new ImageIcon(iCerrar.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
 bCerrar = new JButton(); //quitamos el texto que tenia al inicio
@@ -832,7 +838,7 @@ A continuación y para acabar vamos a realizar unas pequeñas modificaciones y a
 
 En la primera clase se menciono este método pero es la hora de usarse, vamos a ir a la configuración de nuestra ventana y añadiremos el método:
 
-```
+```typescript
 setUndecorated(true);
 ```
 
@@ -851,7 +857,7 @@ Podemos notar algunas cosas:
 
 - **Ahora hay mas espacio** efectivamente ahora nuestra aplicación tiene un poco mas de espacio por lo que ahora haremos unas pequeñas correcciones de posición para aprovechar este espacio. Recordar que aquí se muestra desordenado, sin embargo en el código estas modificaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
 
-```
+```typescript
 lEslogan.setLocation((pDerecha.getWidth() - lEslogan.getWidth()) / 2, 60);
 lTituloLogin.setLocation((pDerecha.getWidth() - lTituloLogin.getWidth()) / 2, 80);
 lNotificaciones.setLocation((pDerecha.getWidth() - lNotificaciones.getWidth()) / 2, 400);
