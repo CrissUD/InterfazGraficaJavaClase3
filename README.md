@@ -538,6 +538,30 @@ y adentro creamos una carpeta llamada **img** allí es donde guardaremos nuestra
   <p>imágenes que vamos a usar en nuestra interfaz</p>
 </div>
 
+**Nota**
+
+Estas imágenes puedes descargarlas desde este mismo repositorio, entrando a la carpeta **Clase3** seguido de la carpeta a **resources/img** y ahi podrás ver y descargar cada una de las imágenes.
+
+<div align="center">
+  <img  src="./resources/clase3.png">
+  <p>Carpeta clase3 dentro del repositorio</p>
+</div>
+
+<div align="center">
+  <img  src="./resources/resourcesgit.png">
+  <p>Carpeta resources/img dentro del repositorio</p>
+</div>
+
+<div align="center">
+  <img  src="./resources/images.png">
+  <p>Lista de imágenes dentro del repositorio</p>
+</div>
+
+<div align="center">
+  <img  src="./resources/download.png">
+  <p>Descarga de imágenes dentro del repositorio</p>
+</div>
+
 ## Declaración
 
 ```javascript
