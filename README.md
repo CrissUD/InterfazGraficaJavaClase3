@@ -525,7 +525,7 @@ y adentro creamos una carpeta llamada **img** allí es donde guardaremos nuestra
 
 <div align="center">
   <img  src="./resources/resources.png">
-  <p>Carpeta resoruces dentro del proyecto</p>
+  <p>Carpeta resources dentro del proyecto</p>
 </div>
 
 <div align="center">
