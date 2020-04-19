@@ -298,7 +298,7 @@ import javax.swing.BorderFactory;
 Dibuja en los limites del objeto gráfico un borde con una linea:
 
 ```javascript
-borde = BorderFactory.createLineBorder(colorAzul, 2, true);
+border = BorderFactory.createLineBorder(colorAzul, 2, true);
 ```
 
 Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createLineBorder**.
@@ -306,7 +306,7 @@ Los parámetros que recibe son:
 
 - **Color de linea:** recibe un objeto decorador tipo Color y representa el color de la linea.
 - **Grosor:** recibe un numero entero que representa el grosor de la linea.
-- **Bordes redondos:** recibe un booleano para indicar si quiere que las esquinas del borde estén redondeadas o no. Asi pongamos True el cambio sera muy mínimo, no te preocupes si no notas el cambio.
+- **Bordes redondos:** recibe un booleano para indicar si quiere que las esquinas del borde estén redondeadas o no. Así pongamos True el cambio sera muy mínimo, no te preocupes si no notas el cambio.
 
 #### Ejemplo
 
@@ -588,7 +588,7 @@ iCerrar = new ImageIcon("Clase3/resources/img/cerrar.png");
 ```
 
 Se puede observar que al momento de ejemplificar el objeto decorador ImageIcon, este recibe por parámetro un String que en realidad representa
-la dirección donde esta contenida la imagen.
+la dirección donde esta contenida la imagen. También es importante fijarse en la extensión de la imágen en este ejemplo todas son **.png** pero Java también soporta **.jpg**, **.gif** etc.
 
 **Una cosa importante que hay que resaltar es que la dirección puede variar entre editores de código, por ejemplo estas direcciónes funcionan en el editor de texto Visual Studio Code. Pero en NetBeans por ejemplo habría que quitar en la dirección la parte "Clase3/" y empezar por "resources/.."**
 
@@ -806,7 +806,7 @@ Sin embargo esto no es lo que queremos, para empezar queremos que nuestros boton
 ```javascript
 bOpcion1.setContentAreaFilled(false);
 bOpcion2.setContentAreaFilled(false);
-bOpcion2.setContentAreaFilled(false);
+bOpcion3.setContentAreaFilled(false);
 ```
 
 - **setContentAreaFilled:** recibe por parámetro un booleano que por defecto esta en True, si lo cambiamos a false este quitara ciertas propiedades de los botones en Java como el color por defecto en gris y la iluminación cada vez que se pasa encima de el.
@@ -827,8 +827,8 @@ bOpcion1.setBorder(null);
 bOpcion2.setFocusable(false);
 bOpcion2.setBorder(null);
 
-bOpcion2.setFocusable(false);
-bOpcion2.setBorder(null);
+bOpcion3.setFocusable(false);
+bOpcion3.setBorder(null);
 ```
 
 <div align="center">
@@ -845,6 +845,7 @@ bCerrar = new JButton(); //quitamos el texto que tenia al inicio
 bCerrar.setIcon(iDimAux);
 bCerrar.setContentAreaFilled(false);
 bCerrar.setFocusable(false);
+bCerrar.setBorder(null);
 ```
 
 Nuestra Interfaz Luce asi:
@@ -911,7 +912,7 @@ Finalmente nuestra interfaz de usuario con todos nuestros Objetos decoradores in
 
 Si has llegado hasta aquí **!! felicitaciones !!**
 
-Hemos creado nuestra primera interfaz gráfica con una vista amigable para nuestros usuarios y hemos aprendido como crear objetos gráficos y mostrarlos en pantalla y como incorporar objetos decoradores para que nuestras interfaces gráficas luzcan mucho mejor.
+Hemos creado nuestra primera interfaz gráfica con una vista amigable con nuestros usuarios, hemos aprendido como crear objetos gráficos y mostrarlos en pantalla ademas de como incorporar objetos decoradores para que nuestras interfaces gráficas luzcan mucho mejor.
 
 En la siguiente clase vamos a hacer una parada sobre nuestras interfaces y vamos a explorar un poco nuestro código escrito ya que existen maneras de optimizar mucho más nuestro código.
 
