@@ -281,6 +281,17 @@ private Border border;
 
 La variable (objeto) que creemos para los objetos Border empezaran con border en minúscula seguido del nombre de la variable. En este caso solo usaremos un borde por lo que solo usaremos la palabra clave.
 
+**Nota:** 
+
+A veces por defecto importa por defecto la librería:
+```javascript
+import javafx.scene.layout.Border;
+```
+Pero esa librería no nos va a funcionar y nos va a traer problemas. La librería correcta es:
+```javascript
+import javax.swing.border.Border;
+```
+
 ## Ejemplificación
 
 A continuación mostraremos los diferentes bordes que pueden crearse usando nuestro único objeto (border) para mostrar la variedad de estos, sin embargo en nuestro login usaremos solo un tipo de estos bordes.
