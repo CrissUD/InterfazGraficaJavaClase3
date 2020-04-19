@@ -283,11 +283,11 @@ La variable (objeto) que creemos para los objetos Border empezaran con border en
 
 **Nota:** 
 
-A veces por defecto Java importa por defecto la librería:
+A veces por defecto Java importa la librería:
 ```javascript
 import javafx.scene.layout.Border;
 ```
-Pero esa librería no nos va a funcionar y nos va a traer problemas. La librería correcta es:
+Pero esa librería no va a funcionar y nos va a traer problemas. La librería correcta es:
 ```javascript
 import javax.swing.border.Border;
 ```
