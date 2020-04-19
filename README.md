@@ -283,7 +283,7 @@ La variable (objeto) que creemos para los objetos Border empezaran con border en
 
 **Nota:** 
 
-A veces por defecto importa por defecto la librería:
+A veces por defecto Java importa por defecto la librería:
 ```javascript
 import javafx.scene.layout.Border;
 ```
