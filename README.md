@@ -298,7 +298,7 @@ A continuación mostraremos los diferentes bordes que pueden crearse usando nues
 
 ### **BorderFactory**
 
-Antes de mostrar los diferentes bordes debemos implementar la librería **borderFactory** de Swing que nos dará la posibilidad de crear nuestros borders.
+Antes de mostrar los diferentes bordes debemos importar otra librería más, esta es la librería **borderFactory** de Swing que nos dará la posibilidad de crear nuestros borders.
 
 ```javascript
 import javax.swing.BorderFactory;
