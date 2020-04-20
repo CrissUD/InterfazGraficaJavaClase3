@@ -921,6 +921,8 @@ Finalmente nuestra interfaz de usuario con todos nuestros Objetos decoradores in
   <p>Login de usuario Finalizado</p>
 </div>
 
+El Login anterior es una reconstrucción inspirada del proyecto web que puede ver en este [link de repositorio](https://github.com/akashyap2013/Advanced-Login-UI)
+
 Si has llegado hasta aquí **!! felicitaciones !!**
 
 Hemos creado nuestra primera interfaz gráfica con una vista amigable con nuestros usuarios, hemos aprendido como crear objetos gráficos y mostrarlos en pantalla ademas de como incorporar objetos decoradores para que nuestras interfaces gráficas luzcan mucho mejor.
