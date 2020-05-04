@@ -18,7 +18,7 @@ Curso propuesto por el grupo de trabajo Semana de Ingenio y Diseño (**SID**) de
 Recordando nuestra clase anterior habíamos creado una interfaz gráfica para un Login de usuario. Y el resultado de esa clase fue una interfaz así:
 
 <div align="center">
-  <img  src="./resources/interfaz1.png">
+  <img  src="https://i.imgur.com/Epxdvfw.png">
   <p>Login de usuario creada en la clase anterior</p>
 </div>
 
@@ -37,7 +37,7 @@ La declaración de un objeto decorador consiste de igual forma en indicarle al s
 - **Variable:** El nombre que el programador elija darle y sera esta el objeto por el cual se podrá acceder a sus métodos.
 
 <div align="center">
-  <img  src="./resources/declaracion.png">
+  <img  src="https://i.imgur.com/9TabmI5.png">
   <p>Declaración de un objeto decorador</p>
 </div>
 
@@ -46,7 +46,7 @@ La declaración de un objeto decorador consiste de igual forma en indicarle al s
 La ejemplificación del objeto decorador consiste en darle un valor inicial al objeto y para esto es necesario llamar al constructor de la clase, **Cuando se realiza la ejemplificación al mismo tiempo se realiza la configuración del objeto**. Para este curso la ejemplificación se realizará dentro del **constructor** de nuestra clase y serán los primeros objetos solo por debajo del método **super** en caso de que exista.
 
 <div align="center">
-  <img  src="./resources/ejemplificacion.png">
+  <img  src="https://i.imgur.com/kSIxUgy.png">
   <p>Ejemplificación de un objeto decorador</p>
 </div>
 
@@ -55,7 +55,7 @@ La ejemplificación del objeto decorador consiste en darle un valor inicial al o
 La incorporación se realiza cuando un objeto gráfico por medio de su configuración llama algún método relacionado con el uso de estos tipos de objetos, por eso en lugar de adicionarse mas bien se incorporan a un objeto gráfico.
 
 <div align="center">
-  <img  src="./resources/incorporacion.png">
+  <img  src="https://i.imgur.com/bJwjfni.png">
   <p>Incorporación de un objeto decorador</p>
 </div>
 
@@ -80,7 +80,7 @@ Existen varias formas para crear colores en Java y a continuación mencionamos l
 Java trae por defecto una paleta de colores y para poder ser usados solo basta con llamar la clase **Color** y al digitar . (punto) nos traerá una variedad de colores. Es importante que la librería que nos soporta la creación de los colores sea importada, esto se hace por defecto dependiendo del editor que se maneje. Cuando usamos los colores por defecto de Java **no es necesario realizar la declaración ni la ejemplificación**.
 
 <div align="center">
-  <img  src="./resources/colores.png">
+  <img  src="https://i.imgur.com/f1l9ddM.png">
   <p>Paleta de colores por defecto de Java</p>
 </div>
 
@@ -120,7 +120,7 @@ En el anterior código se ve reflejada la incorporación de varios objetos de ti
 Java también admite la creación de objetos rgba los cuales dan un gran uso y posibilidades para personalizar nuestra interfaz gráfica. Los pasos para la creación de ese tipo de colores es la misma que los colores personalizados que acabamos de crear. Salvo en la ejemplificación donde habrá un ligero cambio.
 
 <div align="center">
-  <img  src="./resources/color.png">
+  <img  src="https://i.imgur.com/vhYYajs.png">
   <p>Color con transparencia</p>
 </div>
 El ultimo parámetro representa el alfa y es un numero flotante que va desde 0 hasta 1, siendo 1 un color solido y siendo 0 un color totalmente transparente.
@@ -145,7 +145,7 @@ bRegistrarse.setBackground(colorAzul);
 Hasta el momento nuestra Interfaz Gráfica se ve asi:
 
 <div align="center">
-  <img  src="./resources/interfaz2.png">
+  <img  src="https://i.imgur.com/uynt8gV.png">
   <p>Login de usuario con incorporación de colores</p>
 </div>
 
@@ -181,7 +181,7 @@ Podemos observar que al momento de ejemplificar el objeto se realiza su respecti
 - Los diferentes estilos se pueden observar llamando a la clase Font y poniendo un . (punto).
 - El tamaño de la letra sera un numero entero.
 <div align="center">
-  <img  src="./resources/font.png">
+  <img  src="https://i.imgur.com/Bm7ZWPA.png">
   <p>Ejemplo de ejemplificación de objetos decoradores tipo Font</p>
 </div>
 
@@ -207,7 +207,7 @@ También se puede observar que se realizaron unos cambios en el tamaño de algun
 Nuestra aplicación luce asi:
 
 <div align="center">
-  <img  src="./resources/interfaz3.png">
+  <img  src="https://i.imgur.com/bzwCkb3.png">
   <p>Login de usuario con incorporación de fuentes</p>
 </div>
 
@@ -264,7 +264,7 @@ Se puede observar que el método para incorporar este objeto decorador es:
 Ahora nuestra interfaz gráfica tiene interactividad con el Mouse cada que el usuario pasa por nuestros botones:
 
 <div align="center">
-  <img  src="./resources/cursores.gif">
+  <img  src="https://i.imgur.com/JIWyctq.gif">
   <p>Login de usuario con incorporación de Cursores</p>
 </div>
 
@@ -322,7 +322,7 @@ Los parámetros que recibe son:
 #### Ejemplo
 
 <div align="center">
-  <img  src="./resources/border1.png">
+  <img  src="https://i.imgur.com/f7GqwR3.png">
   <p>LineBorder en un JTextField</p>
 </div>
 
@@ -341,7 +341,7 @@ Podemos observar que para crear el borde tenemos que llamar primero a la clase *
 #### Ejemplo
 
 <div align="center">
-  <img  src="./resources/border2.png">
+  <img  src="https://i.imgur.com/Qt65uQT.png">
   <p>LoweredBevelBorder en un JTextField</p>
 </div>
 
@@ -360,7 +360,7 @@ Podemos observar que para crear el borde tenemos que llamar primero a la clase *
 #### Ejemplo
 
 <div align="center">
-  <img  src="./resources/border3.png">
+  <img  src="https://i.imgur.com/uPaiafP.png">
   <p>RaisedBevelBorder en un JTextField</p>
 </div>
 
@@ -399,12 +399,12 @@ Cabe destacar que con este borde podemos buscar el efecto de **Hundido** o **Enc
 #### Ejemplo
 
 <div align="center">
-  <img  src="./resources/border4.png">
+  <img  src="https://i.imgur.com/2XwTppc.png">
   <p>BevelBorder en un JTextField</p>
 </div>
 
 <div align="center">
-  <img  src="./resources/border5.png">
+  <img  src="https://i.imgur.com/r4UNtV5.png">
   <p>BevelBorder en un JTextField con colores</p>
 </div>
 
@@ -426,7 +426,7 @@ Este recibe por parámetros:
 #### Ejemplo
 
 <div align="center">
-  <img  src="./resources/border6.png">
+  <img  src="https://i.imgur.com/JdU1kRH.png">
   <p>EtchedBorder en un JTextField</p>
 </div>
 
@@ -450,7 +450,7 @@ Este recibe por parámetros:
 #### Ejemplo
 
 <div align="center">
-  <img  src="./resources/border7.png">
+  <img  src="https://i.imgur.com/jcllQ2u.png">
   <p>MatteBorder en un JTextField</p>
 </div>
 
@@ -474,7 +474,7 @@ Este recibe por parámetros:
 #### Ejemplo
 
 <div align="center">
-  <img  src="./resources/border8.png">
+  <img  src="https://i.imgur.com/mk8ewhP.png">
   <p>DashedBorder en un JTextField</p>
 </div>
 
@@ -485,7 +485,7 @@ Es un Border compuesto que recibe como parámetro dos objetos Borders y los comb
 A continuación veremos una implementación de este borde con la combinación de varios LineBorders para dar un efecto difuminado.
 
 <div align="center">
-  <img  src="./resources/composedborder.png">
+  <img  src="https://i.imgur.com/2LxfBtH.png">
   <p>Implementación de CompoundBorder</p>
 </div>
 
@@ -498,7 +498,7 @@ Este recibe por parámetros:
 #### Resultado
 
 <div align="center">
-  <img  src="./resources/border9.png">
+  <img  src="https://i.imgur.com/cSJSD35.png">
   <p>Ejemplo de un CompoundBorder en un JPanel</p>
 </div>
 
@@ -521,7 +521,7 @@ cbTipoUsuario.setLocation((pDerecha.getWidth() - cbTipoUsuario.getWidth()) / 2, 
 Hasta el momento nuestra interfaz estará así:
 
 <div align="center">
-  <img  src="./resources/interfaz4.png">
+  <img  src="https://i.imgur.com/mJCxsgm.png">
   <p>Login de usuario con la incorporación de bordes</p>
 </div>
 
@@ -535,17 +535,17 @@ Es importante tener todos nuestros recursos dentro de un paquete en nuestro proy
 y adentro creamos una carpeta llamada **img** allí es donde guardaremos nuestras imágenes.
 
 <div align="center">
-  <img  src="./resources/resources.png">
+  <img  src="https://i.imgur.com/y2r7c8F.png">
   <p>Carpeta resources dentro del proyecto</p>
 </div>
 
 <div align="center">
-  <img  src="./resources/img.png">
+  <img  src="https://i.imgur.com/M8J653p.png">
   <p>Carpeta img dentro de la carpeta resources</p>
 </div>
 
 <div align="center">
-  <img  src="./resources/imagenes.png">
+  <img  src="https://i.imgur.com/fkSOCgw.png">
   <p>imágenes que vamos a usar en nuestra interfaz</p>
 </div>
 
@@ -554,22 +554,22 @@ y adentro creamos una carpeta llamada **img** allí es donde guardaremos nuestra
 Estas imágenes puedes descargarlas desde este mismo repositorio, entrando a la carpeta **Clase3** seguido de la carpeta a **resources/img** y ahi podrás ver y descargar cada una de las imágenes.
 
 <div align="center">
-  <img  src="./resources/clase3.png">
+  <img  src="https://i.imgur.com/49VKanC.png">
   <p>Carpeta clase3 dentro del repositorio</p>
 </div>
 
 <div align="center">
-  <img  src="./resources/resourcesgit.png">
+  <img  src="https://i.imgur.com/v872UH6.png">
   <p>Carpeta resources/img dentro del repositorio</p>
 </div>
 
 <div align="center">
-  <img  src="./resources/images.png">
+  <img  src="https://i.imgur.com/He06mzt.png">
   <p>Lista de imágenes dentro del repositorio</p>
 </div>
 
 <div align="center">
-  <img  src="./resources/download.png">
+  <img  src="https://i.imgur.com/9xw7zrR.png">
   <p>Descarga de imágenes dentro del repositorio</p>
 </div>
 
@@ -626,7 +626,7 @@ pIzquierda.setBackground(Color.white);
 Asi quedaría nuestra interfaz:
 
 <div align="center">
-  <img  src="./resources/interfaz5.png">
+  <img  src="https://i.imgur.com/4TvKMVT.png">
   <p>Login de usuario cambiando el color de fondo al pIzquierda</p>
 </div>
 
@@ -653,21 +653,21 @@ Se puede observar que el método para incorporar un objeto decorador tipo ImageI
 Una pregunta realmente importante que hay que hacerse es **¿en que parte del constructor coloco la creación de mi nuevo objeto gráfico?** Y esta pregunta es valida por que si por ejemplo ponemos este fragmento de código justo después de la creación de los JPanel ocurre lo siguiente:
 
 <div align="center">
-  <img  src="./resources/interfaz6.png">
+  <img  src="https://i.imgur.com/Gl8qNwh.png">
   <p>Login de usuario agregando imagen de fondo justo después de la creación de los paneles</p>
 </div>
 
 Se puede observar que la imagen de fondo quedo encima del Label que daba el titulo y encima de los botones que habíamos puesto ahí. Y es por que Java **pondrá los elementos uno detrás de otro en el eje Z a medida que se vayan añadiendo.** Por lo que si queremos que nuestra imagen quede en el fondo tendremos que ponerla de ultimas justo después de los últimos botones que habíamos adicionado en el panel pIzquierda:
 
 <div align="center">
-  <img  src="./resources/ordenz.png">
+  <img  src="https://i.imgur.com/9IWJPt2.png">
   <p>Orden en código de elementos en pIzquierda para que la imagen quede en el fondo de nuestra ventana</p>
 </div>
 
 De esta manera nuestra interfaz quedara asi:
 
 <div align="center">
-  <img  src="./resources/interfaz7.png">
+  <img  src="https://i.imgur.com/txNmZVi.png">
   <p>Login de usuario agregando imagen de fondo justo después de la creación del ultimo objeto gráfico adicionado en pIzquierda</p>
 </div>
 
@@ -680,7 +680,7 @@ Una posible forma seria redimensionar nuestra imagen de forma manual con algún 
 La mejor forma es haciendolo en nuestro código y para esto necesitamos de un objeto auxiliar:
 
 <div align="center">
-  <img  src="./resources/auxiliar.png">
+  <img  src="https://i.imgur.com/i7ewru2.png">
   <p>Objeto Auxiliar</p>
 </div>
 
@@ -719,7 +719,7 @@ lFondo.setIcon(iDimAux);
 Y ahora nuestra interfaz se vera asi:
 
 <div align="center">
-  <img  src="./resources/interfaz8.png">
+  <img  src="https://i.imgur.com/EepfdRb.png">
   <p>Login de usuario con imagen de fondo redimensionada</p>
 </div>
 
@@ -787,7 +787,7 @@ pDerecha.add(lClave);
 Con estas adiciones en nuestro código la interfaz gráfica queda asi:
 
 <div align="center">
-  <img  src="./resources/interfaz9.png">
+  <img  src="https://i.imgur.com/ZOvqcGk.png">
   <p>Login de usuario con incorporación de ImageIcon</p>
 </div>
 
@@ -808,7 +808,7 @@ bOpcion3.setIcon(iDimAux);
 nuestros botones se verán asi:
 
 <div align="center">
-  <img  src="./resources/botones1.png">
+  <img  src="https://i.imgur.com/9pyP3wu.png">
   <p>Botones con incorporación de ImageIcon</p>
 </div>
 
@@ -825,7 +825,7 @@ bOpcion3.setContentAreaFilled(false);
 Nuestros botones ahora están asi:
 
 <div align="center">
-  <img  src="./resources/botones2.png">
+  <img  src="https://i.imgur.com/4wdrWk7.png">
   <p>Botones sin propiedades content Area</p>
 </div>
 
@@ -843,7 +843,7 @@ bOpcion3.setBorder(null);
 ```
 
 <div align="center">
-  <img  src="./resources/botones3.png">
+  <img  src="https://i.imgur.com/O01VUii.png">
   <p>Botones sin borde ni la propiedad focusable</p>
 </div>
 
@@ -862,7 +862,7 @@ bCerrar.setBorder(null);
 Nuestra Interfaz Luce asi:
 
 <div align="center">
-  <img  src="./resources/interfaz10.png">
+  <img  src="https://i.imgur.com/MNGvHh4.png">
   <p>Login de usuario con incorporación de ImageIcon</p>
 </div>
 
@@ -885,7 +885,7 @@ Podemos notar algunas cosas:
 - **Nuestra aplicación ya no cierra** este problema se solucionará en otra clase, por ahora podemos cerrarlo desde la barra de tareas.
 
 <div align="center">
-  <img  src="./resources/cerrar.png">
+  <img  src="https://i.imgur.com/8Mjvxb4.png">
   <p>Cerrando desde la barra de tareas</p>
 </div>
 
@@ -917,7 +917,7 @@ checkNo.setLocation((pDerecha.getWidth() + checkNo.getWidth()) / 2 - 15, 375);
 Finalmente nuestra interfaz de usuario con todos nuestros Objetos decoradores incorporados queda asi:
 
 <div align="center">
-  <img  src="./resources/interfaz11.png">
+  <img  src="https://i.imgur.com/CjvFaQY.png">
   <p>Login de usuario Finalizado</p>
 </div>
 
