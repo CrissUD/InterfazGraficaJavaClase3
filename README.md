@@ -233,14 +233,14 @@ Java proporciona una totalidad de 15 opciones de cursores para incorporar en nue
 
 | Cursor           | Descripción                                       | imagen                        |
 | ---------------- | ------------------------------------------------- | ----------------------------- |
-| CROSSHAIR_CURSOR | Cursor en forma de Cruz                           | ![](./resources/ccross.png)   |
-| DEFAULT_CURSOR   | Puntero en forma de flecha que esta por defecto   | ![](./resources/cdefault.png) |
-| E_RESIZE_CURSOR  | Cursor con dos flechas unidas de forma horizontal | ![](./resources/ceresize.png) |
-| N_RESIZE_CURSOR  | Cursor con dos flechas unidas de forma Vertical   | ![](./resources/cnresize.png) |
-| HAND_CURSOR      | Cursor con una mano                               | ![](./resources/chand.png)    |
-| MOVE_CURSOR      | Cursor en forma de Cruz con punta de flechas      | ![](./resources/cmove.png)    |
-| TEXT_CURSOR      | Cursor en forma de linea para texto               | ![](./resources/ctext.png)    |
-| WAIT_CURSOR      | Cursor en forma circular para esperar             | ![](./resources/cwait.png)    |
+| CROSSHAIR_CURSOR | Cursor en forma de Cruz                           | ![](./cursores/ccross.png)   |
+| DEFAULT_CURSOR   | Puntero en forma de flecha que esta por defecto   | ![](./cursores/cdefault.png) |
+| E_RESIZE_CURSOR  | Cursor con dos flechas unidas de forma horizontal | ![](./cursores/ceresize.png) |
+| N_RESIZE_CURSOR  | Cursor con dos flechas unidas de forma Vertical   | ![](./cursores/cnresize.png) |
+| HAND_CURSOR      | Cursor con una mano                               | ![](./cursores/chand.png)    |
+| MOVE_CURSOR      | Cursor en forma de Cruz con punta de flechas      | ![](./cursores/cmove.png)    |
+| TEXT_CURSOR      | Cursor en forma de linea para texto               | ![](./cursores/ctext.png)    |
+| WAIT_CURSOR      | Cursor en forma circular para esperar             | ![](./cursores/cwait.png)    |
 
 ### Incorporación
 
