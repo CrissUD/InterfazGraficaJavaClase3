@@ -687,13 +687,18 @@ Es importante tener todos los recursos dentro de un paquete en el proyecto. Para
 Estas imágenes pueden ser descargadas desde este mismo repositorio, entrando a la carpeta **Clase3** seguido de la carpeta a **resources/images** y ahi se prodran ver y descargar cada una de las imágenes.
 
 <div align="center">
-  <img  src="https://i.imgur.com/49VKanC.png">
+  <img  src="https://i.imgur.com/YPgV0TE.png">
   <p>Carpeta clase3 dentro del repositorio</p>
 </div>
 
 <div align="center">
-  <img  src="https://i.imgur.com/v872UH6.png">
-  <p>Carpeta resources/img dentro del repositorio</p>
+  <img  src="https://i.imgur.com/AP18lqb.png">
+  <p>Carpeta resources dentro del repositorio</p>
+</div>
+
+<div align="center">
+  <img  src="https://i.imgur.com/z7yuVoL.png">
+  <p>Carpeta images dentro del repositorio</p>
 </div>
 
 <div align="center">
@@ -706,17 +711,16 @@ Estas imágenes pueden ser descargadas desde este mismo repositorio, entrando a 
   <p>Descarga de imágenes dentro del repositorio</p>
 </div>
 
-## Declaración
-
+* **Declaración**
 ```javascript
 private ImageIcon iFondo, iSvg, iLogo, iUsuario, iClave, iPunto, iFacebook, iTwitter, iYoutube, iCerrar, iDimAux;
 ```
 
-La variable (objeto) que creemos para los objetos ImageIcon empezaran con i en minúscula seguido del nombre de la variable.
+La variable (objeto) que se coloca para los objetos ImageIcon empezará con i en minúscula seguido del nombre de la variable.
 
-## Ejemplificación
+* **Ejemplificación**
 
-A continuación mostramos la ejemplificación y configuración de los objetos Decoradores tipo ImageIcon:
+A continuación se muestra la ejemplificación y configuración de los objetos Decoradores tipo ImageIcon:
 
 ```javascript
 iFondo = new ImageIcon("Clase3/resources/img/fondo.png");
@@ -734,11 +738,11 @@ iCerrar = new ImageIcon("Clase3/resources/img/cerrar.png");
 Se puede observar que al momento de ejemplificar el objeto decorador ImageIcon, este recibe por parámetro un String que en realidad representa
 la dirección donde esta contenida la imagen. También es importante fijarse en la extensión de la imágen en este ejemplo todas son **.png** pero Java también soporta **.jpg**, **.gif** etc.
 
-**Una cosa importante que hay que resaltar es que la dirección puede variar entre editores de código, por ejemplo estas direcciónes funcionan en el editor de texto Visual Studio Code. Pero en NetBeans por ejemplo habría que quitar en la dirección la parte "Clase3/" y empezar por "resources/.."**
+**Otro punto importante que hay que resaltar es que la dirección puede variar entre IDEs y editores de código, por ejemplo estas direcciónes funcionan en el editor de texto Visual Studio Code. Pero en NetBeans por ejemplo habría que quitar en la dirección la parte "Clase3/" y empezar por "resources/.."**
 
-## Incorporación
+* **Incorporación**
 
-Muchas veces queremos incorporar las imágenes a la ventana y no necesariamente incorporarlas a un botón, un JTextField etc. Una manera de realizar esto es mediante la creación de labels que contengan estas imágenes. Ya que los JLabel por defecto traen un fondo transparente y esto sera de gran utilidad. Por lo que vamos a crear los JLabel correspondientes:
+Como un ImageIcon es un objeto decorador, este no se puede agregar directamente a la ventana, necesitamos un objeto gráfico como intermediario para ser mostrado. Una manera de realizar esto es mediante la creación de labels que contengan estas imágenes. Ya que los JLabel por defecto traen un fondo transparente y esto es de gran utilidad. Por lo que se van a crear los JLabel correspondientes:
 
 ## Declaración objetos JLabel
 
@@ -748,29 +752,30 @@ private JLabel lFondo, lSvg, lLogo, lUsuario, lClave, lFacebook, lTwitter, lYout
 
 ## Ejemplificación y Configuración y Adición objetos JLabel
 
-Vamos a ver el ejemplo con uno de ellos por ahora para explicar unos **aspectos importantes**.
+Se va a ver primero el ejemplo con uno de los labels para explicar unos **aspectos importantes**.
 
-Vamos a añadir un fondo a la interfaz, lo primero que haremos es poner el color de fondo del pIzquierda a blanco:
+Se va a añadir un fondo a la interfaz, lo primero que se hace es poner el color de fondo del panel pIzquierda a blanco:
 
 ```javascript
 pIzquierda.setBackground(Color.white);
 ```
 
-Asi quedaría la interfaz:
+Asi se ve la interfaz:
 
 <div align="center">
   <img  src="https://i.imgur.com/4TvKMVT.png">
   <p>Login de usuario cambiando el color de fondo al pIzquierda</p>
 </div>
 
-Ahora vamos a Ejemplificar y configurar el objeto JLabel.
+Ahora se va a Ejemplificar y configurar el objeto JLabel.
 
-Quizás te estes preguntando en este momento:
-**¿si quiero una imagen de fondo, por que no incorporarla al JPanel de una vez?**
+Una pregunta valida en este punto puede ser:
+**¿Si se quiere una imagen de fondo, por que no incorporarla al JPanel directamente?**
 
-Esto es debido a que los JPanel no tienen la propiedad de incorporar una imagen. Por eso lo haremos por medio de un JLabel.
+Esto es debido a que los JPanel no tienen la propiedad de incorporar una imagen. Por eso se hace por medio de un JLabel.
 
 ```javascript
+// dentro del constructor
 lFondo = new JLabel();
 lFondo.setBounds(0, 0, 600, 600);
 lFondo.setIcon(iFondo);
@@ -779,18 +784,18 @@ pIzquierda.add(lFondo);
 
 Se puede observar que el método para incorporar un objeto decorador tipo ImageIcon es:
 
-- **setIcon:** que recibe por parámetro un objeto decorador ImageIcon y representa la imagen que se añade a la ventana.
+- **setIcon:** Recibe por parámetro un objeto decorador ImageIcon y representa la imagen que se añade a la ventana.
 
-### **Aspecto 1 Orden de objetos mostrados en pantalla**
+### **Aspecto 1: Orden de objetos mostrados en pantalla**
 
-Una pregunta realmente importante que hay que hacerse es **¿en que parte del constructor coloco la creación de mi nuevo objeto gráfico?** Y esta pregunta es valida por que si por ejemplo ponemos este fragmento de código justo después de la creación de los JPanel ocurre lo siguiente:
+Una pregunta realmente importante que hay que hacerse es **¿En que parte del constructor se debe colocar la creación del nuevo JLabel?** Y esta pregunta es valida por que si por ejemplo se pone este fragmento de código justo después de la creación de los JPanel ocurre lo siguiente:
 
 <div align="center">
   <img  src="https://i.imgur.com/Gl8qNwh.png">
   <p>Login de usuario agregando imagen de fondo justo después de la creación de los paneles</p>
 </div>
 
-Se puede observar que la imagen de fondo quedo encima del Label que daba el titulo y encima de los botones que habíamos puesto ahí. Y es por que Java **pondrá los elementos uno detrás de otro en el eje Z a medida que se vayan añadiendo.** Por lo que si queremos que la imagen quede en el fondo tendremos que ponerla de ultimas justo después de los últimos botones que habíamos adicionado en el panel pIzquierda:
+Se puede observar que la imagen de fondo quedo encima del Label que daba el titulo a la aplicación y encima de los botones ubicados en la parte izquierda. Y es por que Java **pondrá los elementos uno detrás de otro en el eje Z a medida que se vayan añadiendo.** Por lo que si queremos que la imagen quede en el fondo tendremos que ponerla de ultimas justo después de los últimos botones que habíamos adicionado en el panel pIzquierda:
 
 <div align="center">
   <img  src="https://i.imgur.com/9IWJPt2.png">
@@ -806,18 +811,18 @@ De esta manera la interfaz quedara asi:
 
 ### **Aspecto 2: Redimensión de las imágenes**
 
-Se pueden dar cuenta que en la interfaz la imagen de fondo quedo incorporada sin embargo no quedo como esperábamos. Esto es debido a que la imagen es de dimensiones mucho mas grandes que las de la ventana asi que será buena idea redimensionarla.
+Se observa que en la interfaz la imagen de fondo quedo incorporada, sin embargo, no quedo como se esperaba. Esto es debido a que la imagen es de dimensiones mucho mas grandes que las de la ventana asi que será buena idea redimensionarla.
 
-Una posible forma seria redimensionar la imagen de forma manual con algún programa como photoshop, sin embargo, esto no es nada optimo y menos si hay miles de imágenes por redimensionar.
+Una posible forma de redimensión sería de forma manual con algún programa como photoshop, sin embargo, esto no es nada optimo y menos si hay una gran cantidad de imágenes por redimensionar.
 
-La mejor forma es haciendolo en el código y para esto necesitamos de un objeto auxiliar:
+La mejor forma es hacerlo en el código y para esto necesitamos de un objeto auxiliar:
 
 <div align="center">
   <img  src="https://i.imgur.com/i7ewru2.png">
   <p>Objeto Auxiliar</p>
 </div>
 
-Antes de poder realizar la redimension necesitamos agregar una librería mas en el código:
+Antes de poder realizar la redimensión necesitamos agregar una librería más en el código:
 
 ```javascript
 import java.awt.Image;
@@ -830,26 +835,27 @@ iDimAux = new ImageIcon(iFondo.getImage().getScaledInstance(600, 600, Image.SCAL
 
 lFondo = new JLabel();
 ...
+...
 ```
 
-se puede observar que se esta realizando una ejemplificación de un objeto decorador ImageIcon, sin embargo no está recibiendo ninguna ruta, este esta recibiendo por parámetro otro objeto ImageIcon y se están llamando el siguiente método:
+Se puede observar que se esta realizando una ejemplificación de un objeto decorador ImageIcon, sin embargo no está recibiendo ninguna ruta, este esta recibiendo por parámetro otro objeto ImageIcon y se están llamando el siguiente método:
 
 - **getImage:** que nos trae el Objeto **Image** del ImageIcon, esto se realiza para poder obtener las propiedades del objeto tipo **Image** como la **redimension** ya que el objeto ImageIcon no cuenta con esta propiedad dentro de su configuración.
 
-Una vez con el objeto **Image** procedemos a llamar su método:
+Una vez con el objeto **Image** se procede a llamar el método:
 
-- **getScaledInstance:** que se encarga de redimensionar la imagen al tamaño que le demos y recibe estos parámetros:
+- **getScaledInstance:** que se encarga de redimensionar la imagen al tamaño que se indique y recibe estos parámetros:
   - **ancho:** Un numero entero que representa el nuevo ancho de la imagen
   - **alto:** Un numero entero que representa el nuevo alto de la imagen
-  - **sistema de escala:** Es un sistema interno de la clase **Image** que se encarga de re acomodar los pixeles. Existen varias opciones para escalar los pixes (**SCALE_AREA_AVERAGING, SCALE_DEFAULT, SCALE_REPLICATE** etc). sin embargo el que por experiencia me da mejores resultados es el **SCALE_AREA_AVERAGING**
+  - **sistema de escala:** Es un sistema interno de la clase **Image** que se encarga de re acomodar los pixeles. Existen varias opciones para escalar los pixes (**SCALE_AREA_AVERAGING, SCALE_DEFAULT, SCALE_REPLICATE** etc). sin embargo el que por experiencia da mejores resultados es el **SCALE_AREA_AVERAGING**
 
-Si ejecutamos la aplicación podremos darnos cuenta que la imagen sigue igual **¿por qué?**, ya que nos falto cambiar el ImageIcon en el label, ahora este debe incorporar el ImageIcon **iDimAux**
+Si se ejecuta la aplicación es posible observar que la imágen sigue igual **¿por qué?**, ya que nos falto cambiar el ImageIcon en el label, ahora este debe incorporar el ImageIcon **iDimAux** quien es el que contiene la imágen redimensionada.
 
 ```javascript
 lFondo.setIcon(iDimAux);
 ```
 
-Y ahora la interfaz se vera asi:
+Y ahora la interfaz se verá así:
 
 <div align="center">
   <img  src="https://i.imgur.com/EepfdRb.png">
@@ -858,7 +864,7 @@ Y ahora la interfaz se vera asi:
 
 ## Creando los otros label para mostrar en la Interfaz
 
-A continuación vamos a mostrar la creación de los objetos JLabel que incorporan las imágenes repitiendo el proceso que vimos anteriormente. Recordar que aunque se muestre el código aquí en desorden en la aplicación se ponen en el orden de tal manera que tenemos presente la organización de objetos con respecto al eje Z.
+A continuación se muestra la creación de los objetos JLabel que incorporan las imágenes repitiendo el proceso que vimos anteriormente. Recordar que aunque se muestre el código aquí todo junto en la aplicación se ponen en el orden de tal manera que tenemos presente la organización de objetos con respecto al eje Z.
 
 ```javascript
 iDimAux = new ImageIcon(iLogo.getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING));
@@ -924,11 +930,13 @@ Con estas adiciones en el código la interfaz gráfica queda asi:
   <p>Login de usuario con incorporación de ImageIcon</p>
 </div>
 
-!Ya falta poco! Ahora tenemos dos imágenes que no hemos incorporado aun, estas se van a incorporar en los botones, bCerrar y bOpcion1, bOpcion2, bOpcion3.
+## Agregando imágenes en botones
 
-Vamos a empezar por los botones opciones, la imagen que queremos incorporar es iPunto.
+**!Ya falta poco!** Ahora hay dos imágenes que no se han incorporado aun, estas se van a incorporar en los botones, bCerrar y bOpcion1, bOpcion2, bOpcion3.
 
-para esto vamos a redimensionar la imagen e incorporarla en los botones:
+Se empieza por los botones opciones, la imágen que se quiere incorporar esta contenida en el objeto decorador iPunto.
+
+Primero se redimensiona la imagen par a luego incorporarla en los botones:
 
 ```javascript
 iDimAux = new ImageIcon(iPunto.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING));
@@ -945,7 +953,7 @@ Los botones se verán asi:
   <p>Botones con incorporación de ImageIcon</p>
 </div>
 
-Sin embargo esto no es lo que queremos, para empezar queremos que los botones queden con un fondo transparente. Esto lo haremos con el siguiente método:
+Sin embargo esto no es lo deseado, para empezar se quiere que los botones queden con un fondo transparente. Esto lo haremos con el siguiente método:
 
 ```javascript
 bOpcion1.setContentAreaFilled(false);
@@ -953,7 +961,7 @@ bOpcion2.setContentAreaFilled(false);
 bOpcion3.setContentAreaFilled(false);
 ```
 
-- **setContentAreaFilled:** recibe por parámetro un booleano que por defecto esta en True, si lo cambiamos a false este quitara ciertas propiedades de los botones en Java como el color por defecto en gris y la iluminación cada vez que se pasa encima de el.
+- **setContentAreaFilled:** Recibe por parámetro un booleano que por defecto esta en True, si se cambia a false este quitara ciertas propiedades de los botones que traen por defecto en Java como el color por defecto en gris y la iluminación cada vez que se pasa encima de el.
 
 Los botones ahora están asi:
 
@@ -962,7 +970,7 @@ Los botones ahora están asi:
   <p>Botones sin propiedades content Area</p>
 </div>
 
-Sin embargo tienen unas lineas que rodean a la imágen que no queremos ver, esto es por que por defecto los botones tienen un borde, debemos quitarselo y ademas no le hemos quitado la propiedad focusable:
+Sin embargo tienen unas lineas que rodean a la imágen que no se quieren ver, esto es por que por defecto los botones tienen un borde, se debe retirar y además no se le ha quitado la propiedad focusable:
 
 ```javascript
 bOpcion1.setFocusable(false);
@@ -980,12 +988,12 @@ bOpcion3.setBorder(null);
   <p>Botones sin borde ni la propiedad focusable</p>
 </div>
 
-Ya esta hecho ! ahora haremos lo mismo para el botón bCerrar:
+Ya esta hecho ! ahora se repite el proceso para el botón bCerrar:
 
 ```javascript
 iDimAux = new ImageIcon(iCerrar.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
-bCerrar = new JButton(); //quitamos el texto que tenia al inicio
+bCerrar = new JButton(); // Se quita el texto que tenia al inicio
 bCerrar.setIcon(iDimAux);
 bCerrar.setContentAreaFilled(false);
 bCerrar.setFocusable(false);
@@ -1001,30 +1009,30 @@ La Interfaz Luce asi:
 
 # Decoraciones Adicionales
 
-A continuación y para acabar vamos a realizar unas pequeñas modificaciones y adiciones en el código para darle los toques finales.
+A continuación y para acabar se van a realizar unas pequeñas modificaciones y adiciones en el código para darle los toques finales.
 
 ## Quitar la barra por defecto en Java
 
-En la primera clase se menciono este método pero es la hora de usarse, vamos a ir a la configuración de la ventana y añadiremos el método:
+En la primera clase se menciono este método pero es la hora de usarse, en la configuración de la ventana se añade el método:
 
 ```javascript
 setUndecorated(true);
 ```
 
-Notamos como la interfaz se ha quitado la barra por defecto de Java, ahora podemos borrar la configuración **super**, ya que no sera necesaria ternerla.
+Notamos como la interfaz ya no cuenta con la barra por defecto de Java, ahora podemos borrar la configuración **super**, ya que no sera necesaria.
 
-Podemos notar algunas cosas:
+Se pueden notar algunas cosas:
 
-- **La aplicación ya no cierra** este problema se solucionará en otra clase, por ahora podemos cerrarlo desde la barra de tareas.
+- **La aplicación ya no cierra** Este problema se solucionará en otra clase, por ahora podemos cerrarlo desde la barra de tareas.
 
 <div align="center">
   <img  src="https://i.imgur.com/8Mjvxb4.png">
   <p>Cerrando desde la barra de tareas</p>
 </div>
 
-- **La aplicación no se mueve** de nuevo este problema se tratará en futuras clases.
+- **La aplicación no se mueve** Este es otro problema que se tratará en futuras clases.
 
-- **Ahora hay mas espacio** efectivamente ahora la aplicación tiene un poco mas de espacio por lo que ahora haremos unas pequeñas correcciones de posición para aprovechar este espacio. Recordar que aquí se muestra desordenado, sin embargo en el código estas modificaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
+- **Ahora hay mas espacio** efectivamente ahora la aplicación tiene un poco más de espacio por lo que ahora se harán unas pequeñas correcciones de posición sobretodo en el eje Y para aprovechar este espacio. Recordar que aquí se muestra todo junto, sin embargo en el código estas modificaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
 
 ```javascript
 lEslogan.setLocation((pDerecha.getWidth() - lEslogan.getWidth()) / 2, 60);
@@ -1058,12 +1066,12 @@ El Login anterior es una reconstrucción inspirada del proyecto web que puede ve
 
 Si has llegado hasta aquí **!! felicitaciones !!**
 
-Hemos creado la primera interfaz gráfica con una vista amigable con los usuarios, hemos aprendido como crear objetos gráficos y mostrarlos en pantalla ademas de como incorporar objetos decoradores para que las interfaces gráficas luzcan mucho mejor.
+Se ha creado la primera interfaz gráfica con una vista amigable con los usuarios, se aprendió como crear objetos gráficos y mostrarlos en pantalla ademas de como incorporar objetos decoradores para que las interfaces gráficas luzcan mucho mejor.
 
-En la siguiente clase vamos a hacer una parada sobre las interfaces y vamos a explorar un poco el código escrito ya que existen maneras de optimizar mucho más el código.
+En la siguiente clase se hará una parada sobre las interfaces y se va a explorar un poco el código escrito ya que existen maneras de optimizar mucho más el código.
 
 # Actividad
 
-Utiliza los objetos decoradores en tu login de usuario para que luzca mucho mas amigable a la vista de los usuarios. Sube a Github los resultados y envía el link al correo:
+Utiliza los objetos decoradores en el login de usuario escogido para que luzca mucho más amigable a la vista de los usuarios. Sube a Github los resultados y envía el link al correo:
 
 cfpatinoc@correo.udistrital.edu.co
