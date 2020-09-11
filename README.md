@@ -348,7 +348,7 @@ cMano = new Cursor(Cursor.HAND_CURSOR);
 
 Java proporciona una totalidad de 15 opciones de cursores para incorporar en las Interfaces de usurario, a continuación se muestran algunos de los mas importantes.
 
-| Cursor           | Descripción                                       | imagen                        |
+| Cursor           | Descripción                                       | imágen                        |
 | ---------------- | ------------------------------------------------- | ----------------------------- |
 | CROSSHAIR_CURSOR | Cursor en forma de Cruz                           | ![](./cursores/ccross.png)   |
 | DEFAULT_CURSOR   | Puntero en forma de flecha que esta por defecto   | ![](./cursores/cdefault.png) |
@@ -678,13 +678,13 @@ Es importante tener todos los recursos dentro de un paquete en el proyecto. Para
 </div>
 
 <div align="center">
-  <img  src="https://i.imgur.com/fkSOCgw.png">
+  <img  src="https://i.imgur.com/Zx61Li7.png">
   <p>imágenes que vamos a usar en la interfaz</p>
 </div>
 
 **Nota**
 
-Estas imágenes pueden ser descargadas desde este mismo repositorio, entrando a la carpeta **Clase3** seguido de la carpeta a **resources/images** y ahi se prodran ver y descargar cada una de las imágenes.
+Algunas de estas imágenes tienen un numero al final ya que más adelante en el curso se añadirán variaciones de estas mismas imágenes. Por otro lado estas imágenes pueden ser descargadas desde este mismo repositorio, entrando a la carpeta **Clase3** seguido de la carpeta a **resources/images** y ahi se prodran ver y descargar cada una de las imágenes.
 
 <div align="center">
   <img  src="https://i.imgur.com/YPgV0TE.png">
@@ -713,10 +713,10 @@ Estas imágenes pueden ser descargadas desde este mismo repositorio, entrando a 
 
 * **Declaración**
 ```javascript
-private ImageIcon iFondo, iSvg, iLogo, iUsuario, iClave, iPunto, iFacebook, iTwitter, iYoutube, iCerrar, iDimAux;
+private ImageIcon iFondo, iSvg1, iLogo, iUsuario, iClave, iPunto1, iFacebook1, iTwitter1, iYoutube1, iCerrar, iDimAux;
 ```
 
-La variable (objeto) que se coloca para los objetos ImageIcon empezará con i en minúscula seguido del nombre de la variable.
+La variable (objeto) que se coloca para los objetos ImageIcon empezará con i en minúscula seguido del nombre de la variable. En este caso algunas variables se les añadió un 1 al final ya que mas adelante en el curso se usarán algunas variaciones de esas mismas imágenes.
 
 * **Ejemplificación**
 
@@ -727,16 +727,16 @@ iFondo = new ImageIcon("Clase3/resources/img/fondo.png");
 iLogo = new ImageIcon("Clase3/resources/img/logo.png");
 iUsuario = new ImageIcon("Clase3/resources/img/usuario.png");
 iClave = new ImageIcon("Clase3/resources/img/clave.png");
-iPunto = new ImageIcon("Clase3/resources/img/punto.png");
-iFacebook = new ImageIcon("Clase3/resources/img/facebook.png");
-iTwitter = new ImageIcon("Clase3/resources/img/twitter.png");
-iYoutube = new ImageIcon("Clase3/resources/img/youtube.png");
-iSvg = new ImageIcon("Clase3/resources/img/imagen.png");
+iPunto1 = new ImageIcon("Clase3/resources/img/punto1.png");
+iFacebook1 = new ImageIcon("Clase3/resources/img/facebook1.png");
+iTwitter1 = new ImageIcon("Clase3/resources/img/twitter1.png");
+iYoutube1 = new ImageIcon("Clase3/resources/img/youtube1.png");
+iSvg1 = new ImageIcon("Clase3/resources/img/imagen1.png");
 iCerrar = new ImageIcon("Clase3/resources/img/cerrar.png");
 ```
 
 Se puede observar que al momento de ejemplificar el objeto decorador ImageIcon, este recibe por parámetro un String que en realidad representa
-la dirección donde esta contenida la imagen. También es importante fijarse en la extensión de la imágen en este ejemplo todas son **.png** pero Java también soporta **.jpg**, **.gif** etc.
+la dirección donde esta contenida la imágen. También es importante fijarse en la extensión de la imágen en este ejemplo todas son **.png** pero Java también soporta **.jpg**, **.gif** etc.
 
 **Otro punto importante que hay que resaltar es que la dirección puede variar entre IDEs y editores de código, por ejemplo estas direcciónes funcionan en el editor de texto Visual Studio Code. Pero en NetBeans por ejemplo habría que quitar en la dirección la parte "Clase3/" y empezar por "resources/.."**
 
@@ -747,7 +747,7 @@ Como un ImageIcon es un objeto decorador, este no se puede agregar directamente 
 ## Declaración objetos JLabel
 
 ```javascript
-private JLabel lFondo, lSvg, lLogo, lUsuario, lClave, lFacebook, lTwitter, lYoutube;
+private JLabel lFondo, lSvg1, lLogo, lUsuario, lClave, lFacebook, lTwitter, lYoutube;
 ```
 
 ## Ejemplificación y Configuración y Adición objetos JLabel
@@ -770,9 +770,9 @@ Asi se ve la interfaz:
 Ahora se va a Ejemplificar y configurar el objeto JLabel.
 
 Una pregunta valida en este punto puede ser:
-**¿Si se quiere una imagen de fondo, por que no incorporarla al JPanel directamente?**
+**¿Si se quiere una imágen de fondo, por que no incorporarla al JPanel directamente?**
 
-Esto es debido a que los JPanel no tienen la propiedad de incorporar una imagen. Por eso se hace por medio de un JLabel.
+Esto es debido a que los JPanel no tienen la propiedad de incorporar una imágen. Por eso se hace por medio de un JLabel.
 
 ```javascript
 // dentro del constructor
@@ -784,7 +784,7 @@ pIzquierda.add(lFondo);
 
 Se puede observar que el método para incorporar un objeto decorador tipo ImageIcon es:
 
-- **setIcon:** Recibe por parámetro un objeto decorador ImageIcon y representa la imagen que se añade a la ventana.
+- **setIcon:** Recibe por parámetro un objeto decorador ImageIcon y representa la imágen que se añade a la ventana.
 
 ### **Aspecto 1: Orden de objetos mostrados en pantalla**
 
@@ -792,26 +792,26 @@ Una pregunta realmente importante que hay que hacerse es **¿En que parte del co
 
 <div align="center">
   <img  src="https://i.imgur.com/Gl8qNwh.png">
-  <p>Login de usuario agregando imagen de fondo justo después de la creación de los paneles</p>
+  <p>Login de usuario agregando imágen de fondo justo después de la creación de los paneles</p>
 </div>
 
-Se puede observar que la imagen de fondo quedo encima del Label que daba el titulo a la aplicación y encima de los botones ubicados en la parte izquierda. Y es por que Java **pondrá los elementos uno detrás de otro en el eje Z a medida que se vayan añadiendo.** Por lo que si queremos que la imagen quede en el fondo tendremos que ponerla de ultimas justo después de los últimos botones que habíamos adicionado en el panel pIzquierda:
+Se puede observar que la imágen de fondo quedo encima del Label que daba el titulo a la aplicación y encima de los botones ubicados en la parte izquierda. Y es por que Java **pondrá los elementos uno detrás de otro en el eje Z a medida que se vayan añadiendo.** Por lo que si queremos que la imágen quede en el fondo tendremos que ponerla de ultimas justo después de los últimos botones que habíamos adicionado en el panel pIzquierda:
 
 <div align="center">
   <img  src="https://i.imgur.com/9IWJPt2.png">
-  <p>Orden en código de elementos en pIzquierda para que la imagen quede en el fondo de la ventana</p>
+  <p>Orden en código de elementos en pIzquierda para que la imágen quede en el fondo de la ventana</p>
 </div>
 
 De esta manera la interfaz quedara asi:
 
 <div align="center">
   <img  src="https://i.imgur.com/txNmZVi.png">
-  <p>Login de usuario agregando imagen de fondo justo después de la creación del ultimo objeto gráfico adicionado en pIzquierda</p>
+  <p>Login de usuario agregando imágen de fondo justo después de la creación del ultimo objeto gráfico adicionado en pIzquierda</p>
 </div>
 
 ### **Aspecto 2: Redimensión de las imágenes**
 
-Se observa que en la interfaz la imagen de fondo quedo incorporada, sin embargo, no quedo como se esperaba. Esto es debido a que la imagen es de dimensiones mucho mas grandes que las de la ventana asi que será buena idea redimensionarla.
+Se observa que en la interfaz la imágen de fondo quedo incorporada, sin embargo, no quedo como se esperaba. Esto es debido a que la imágen es de dimensiones mucho mas grandes que las de la ventana asi que será buena idea redimensionarla.
 
 Una posible forma de redimensión sería de forma manual con algún programa como photoshop, sin embargo, esto no es nada optimo y menos si hay una gran cantidad de imágenes por redimensionar.
 
@@ -828,7 +828,7 @@ Antes de poder realizar la redimensión necesitamos agregar una librería más e
 import java.awt.Image;
 ```
 
-Para realizar esta redimension realizaremos este código justo encima de la creación del JLabel que contiene la imagen de fondo:
+Para realizar esta redimension realizaremos este código justo encima de la creación del JLabel que contiene la imágen de fondo:
 
 ```javascript
 iDimAux = new ImageIcon(iFondo.getImage().getScaledInstance(600, 600, Image.SCALE_AREA_AVERAGING));
@@ -844,9 +844,9 @@ Se puede observar que se esta realizando una ejemplificación de un objeto decor
 
 Una vez con el objeto **Image** se procede a llamar el método:
 
-- **getScaledInstance:** que se encarga de redimensionar la imagen al tamaño que se indique y recibe estos parámetros:
-  - **ancho:** Un numero entero que representa el nuevo ancho de la imagen
-  - **alto:** Un numero entero que representa el nuevo alto de la imagen
+- **getScaledInstance:** que se encarga de redimensionar la imágen al tamaño que se indique y recibe estos parámetros:
+  - **ancho:** Un numero entero que representa el nuevo ancho de la imágen
+  - **alto:** Un numero entero que representa el nuevo alto de la imágen
   - **sistema de escala:** Es un sistema interno de la clase **Image** que se encarga de re acomodar los pixeles. Existen varias opciones para escalar los pixes (**SCALE_AREA_AVERAGING, SCALE_DEFAULT, SCALE_REPLICATE** etc). sin embargo el que por experiencia da mejores resultados es el **SCALE_AREA_AVERAGING**
 
 Si se ejecuta la aplicación es posible observar que la imágen sigue igual **¿por qué?**, ya que nos falto cambiar el ImageIcon en el label, ahora este debe incorporar el ImageIcon **iDimAux** quien es el que contiene la imágen redimensionada.
@@ -859,7 +859,7 @@ Y ahora la interfaz se verá así:
 
 <div align="center">
   <img  src="https://i.imgur.com/EepfdRb.png">
-  <p>Login de usuario con imagen de fondo redimensionada</p>
+  <p>Login de usuario con imágen de fondo redimensionada</p>
 </div>
 
 ## Creando los otros label para mostrar en la Interfaz
@@ -876,30 +876,30 @@ pIzquierda.add(lLogo);
 ```
 
 ```javascript
-iDimAux = new ImageIcon(iSvg.getImage().getScaledInstance(500, 345, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(iSvg1.getImage().getScaledInstance(500, 345, Image.SCALE_AREA_AVERAGING));
 
-lSvg = new JLabel();
-lSvg.setBounds(100, 100, 500, 345);
-lSvg.setIcon(iDimAux);
-pIzquierda.add(lSvg);
+lSvg1 = new JLabel();
+lSvg1.setBounds(100, 100, 500, 345);
+lSvg1.setIcon(iDimAux);
+pIzquierda.add(lSvg1);
 ```
 
 ```javascript
-iDimAux = new ImageIcon(iFacebook.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(iFacebook1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
 lFacebook = new JLabel();
 lFacebook.setBounds(20, 420, 30, 30);
 lFacebook.setIcon(iDimAux);
 pIzquierda.add(lFacebook);
 
-iDimAux = new ImageIcon(iTwitter.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(iTwitter1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
 lTwitter = new JLabel();
 lTwitter.setBounds(60, 420, 30, 30);
 lTwitter.setIcon(iDimAux);
 pIzquierda.add(lTwitter);
 
-iDimAux = new ImageIcon(iYoutube.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(iYoutube1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
 lYoutube = new JLabel();
 lYoutube.setBounds(100, 420, 30, 30);
@@ -936,10 +936,10 @@ Con estas adiciones en el código la interfaz gráfica queda asi:
 
 Se empieza por los botones opciones, la imágen que se quiere incorporar esta contenida en el objeto decorador iPunto.
 
-Primero se redimensiona la imagen par a luego incorporarla en los botones:
+Primero se redimensiona la imágen par a luego incorporarla en los botones:
 
 ```javascript
-iDimAux = new ImageIcon(iPunto.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(iPunto1.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING));
 
 bOpcion1.setIcon(iDimAux);
 bOpcion2.setIcon(iDimAux);

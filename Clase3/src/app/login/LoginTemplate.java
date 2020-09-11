@@ -30,7 +30,7 @@ public class LoginTemplate extends JFrame {
   // Declaración Objetos Gráficos
   private JPanel pDerecha, pIzquierda;
   private JLabel lTituloApp, lEslogan, lTituloLogin, lNotificaciones;
-  private JLabel lFondo, lSvg, lLogo, lUsuario, lClave, lFacebook, lTwitter, lYoutube;
+  private JLabel lFondo, lSvg1, lLogo, lUsuario, lClave, lFacebook, lTwitter, lYoutube;
   private JTextField tNombreUsuario;
   private JPasswordField tClaveUsuario;
   private JComboBox<String> cbTipoUsuario;
@@ -45,7 +45,7 @@ public class LoginTemplate extends JFrame {
   // private Font fontMediana;
   private Cursor cMano;
   private Border bInferiorAzul;
-  private ImageIcon iFondo, iSvg, iLogo, iUsuario, iClave, iPunto, iFacebook, iTwitter, iYoutube, iCerrar, iDimAux;
+  private ImageIcon iFondo, iSvg1, iLogo, iUsuario, iClave, iPunto1, iFacebook1, iTwitter1, iYoutube1, iCerrar, iDimAux;
 
   public LoginTemplate() {
     this.generarFuentes();
@@ -63,11 +63,11 @@ public class LoginTemplate extends JFrame {
     iLogo = new ImageIcon("Clase3/resources/images/logo.png");
     iUsuario = new ImageIcon("Clase3/resources/images/usuario.png");
     iClave = new ImageIcon("Clase3/resources/images/clave.png");
-    iPunto = new ImageIcon("Clase3/resources/images/punto.png");
-    iFacebook = new ImageIcon("Clase3/resources/images/facebook.png");
-    iTwitter = new ImageIcon("Clase3/resources/images/twitter.png");
-    iYoutube = new ImageIcon("Clase3/resources/images/youtube.png");
-    iSvg = new ImageIcon("Clase3/resources/images/imagen.png");
+    iPunto1 = new ImageIcon("Clase3/resources/images/punto1.png");
+    iFacebook1 = new ImageIcon("Clase3/resources/images/facebook1.png");
+    iTwitter1 = new ImageIcon("Clase3/resources/images/twitter1.png");
+    iYoutube1 = new ImageIcon("Clase3/resources/images/youtube1.png");
+    iSvg1 = new ImageIcon("Clase3/resources/images/imagen1.png");
     iCerrar = new ImageIcon("Clase3/resources/images/cerrar.png");
 
     pIzquierda = new JPanel();
@@ -97,12 +97,12 @@ public class LoginTemplate extends JFrame {
     lTituloApp.setFont(fontTPrincipal);
     pIzquierda.add(lTituloApp);
 
-    iDimAux = new ImageIcon(iSvg.getImage().getScaledInstance(500, 345, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(iSvg1.getImage().getScaledInstance(500, 345, Image.SCALE_AREA_AVERAGING));
 
-    lSvg = new JLabel();
-    lSvg.setBounds(100, 100, 500, 345);
-    lSvg.setIcon(iDimAux);
-    pIzquierda.add(lSvg);
+    lSvg1 = new JLabel();
+    lSvg1.setBounds(100, 100, 500, 345);
+    lSvg1.setIcon(iDimAux);
+    pIzquierda.add(lSvg1);
 
     lEslogan = new JLabel("Te ayudamos en todo");
     lEslogan.setSize(130, 20);
@@ -203,7 +203,7 @@ public class LoginTemplate extends JFrame {
     bCerrar.setBorder(null);
     pDerecha.add(bCerrar);
 
-    iDimAux = new ImageIcon(iPunto.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(iPunto1.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING));
 
     bOpcion1 = new JButton();
     bOpcion1.setBounds(10, 220, 30, 20);
@@ -232,21 +232,21 @@ public class LoginTemplate extends JFrame {
     bOpcion3.setBorder(null);
     pIzquierda.add(bOpcion3);
 
-    iDimAux = new ImageIcon(iFacebook.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(iFacebook1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
     lFacebook = new JLabel();
     lFacebook.setBounds(20, 460, 30, 30);
     lFacebook.setIcon(iDimAux);
     pIzquierda.add(lFacebook);
 
-    iDimAux = new ImageIcon(iTwitter.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(iTwitter1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
     lTwitter = new JLabel();
     lTwitter.setBounds(60, 460, 30, 30);
     lTwitter.setIcon(iDimAux);
     pIzquierda.add(lTwitter);
 
-    iDimAux = new ImageIcon(iYoutube.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(iYoutube1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
     lYoutube = new JLabel();
     lYoutube.setBounds(100, 460, 30, 30);
