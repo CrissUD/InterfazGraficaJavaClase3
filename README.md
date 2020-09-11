@@ -678,7 +678,7 @@ Es importante tener todos los recursos dentro de un paquete en el proyecto. Para
 </div>
 
 <div align="center">
-  <img  src="https://i.imgur.com/Zx61Li7.png">
+  <img  src="https://i.imgur.com/lX56v49.png">
   <p>imágenes que vamos a usar en la interfaz</p>
 </div>
 
@@ -713,10 +713,11 @@ Algunas de estas imágenes tienen un numero al final ya que más adelante en el 
 
 * **Declaración**
 ```javascript
-private ImageIcon iFondo, iSvg1, iLogo, iUsuario, iClave, iPunto1, iFacebook1, iTwitter1, iYoutube1, iCerrar, iDimAux;
+private ImageIcon iFondo, iLogo, iCerrar;
+private ImageIcon iSvg1, iUsuario2, iClave2, iPunto1, iFacebook1, iTwitter1, iYoutube1, iDimAux;
 ```
 
-La variable (objeto) que se coloca para los objetos ImageIcon empezará con i en minúscula seguido del nombre de la variable. En este caso algunas variables se les añadió un 1 al final ya que mas adelante en el curso se usarán algunas variaciones de esas mismas imágenes.
+La variable (objeto) que se coloca para los objetos ImageIcon empezará con i en minúscula seguido del nombre de la variable. En este caso algunas variables se les añadió un número al final ya que mas adelante en el curso se usarán algunas variaciones de esas mismas imágenes.
 
 * **Ejemplificación**
 
@@ -725,8 +726,8 @@ A continuación se muestra la ejemplificación y configuración de los objetos D
 ```javascript
 iFondo = new ImageIcon("Clase3/resources/img/fondo.png");
 iLogo = new ImageIcon("Clase3/resources/img/logo.png");
-iUsuario = new ImageIcon("Clase3/resources/img/usuario.png");
-iClave = new ImageIcon("Clase3/resources/img/clave.png");
+iUsuario2 = new ImageIcon("Clase3/resources/img/usuario2.png");
+iClave2 = new ImageIcon("Clase3/resources/img/clave2.png");
 iPunto1 = new ImageIcon("Clase3/resources/img/punto1.png");
 iFacebook1 = new ImageIcon("Clase3/resources/img/facebook1.png");
 iTwitter1 = new ImageIcon("Clase3/resources/img/twitter1.png");
@@ -818,7 +819,7 @@ Una posible forma de redimensión sería de forma manual con algún programa com
 La mejor forma es hacerlo en el código y para esto necesitamos de un objeto auxiliar:
 
 <div align="center">
-  <img  src="https://i.imgur.com/i7ewru2.png">
+  <img  src="https://i.imgur.com/TQkiwPh.png">
   <p>Objeto Auxiliar</p>
 </div>
 
@@ -908,14 +909,14 @@ pIzquierda.add(lYoutube);
 ```
 
 ```javascript
-iDimAux = new ImageIcon(iUsuario.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(iUsuario2.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
 lUsuario = new JLabel();
 lUsuario.setBounds(40, 130, 30, 30);
 lUsuario.setIcon(iDimAux);
 pDerecha.add(lUsuario);
 
-iDimAux = new ImageIcon(iClave.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(iClave2.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
 lClave = new JLabel();
 lClave.setBounds(40, 250, 30, 30);

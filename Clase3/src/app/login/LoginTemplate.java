@@ -45,7 +45,8 @@ public class LoginTemplate extends JFrame {
   // private Font fontMediana;
   private Cursor cMano;
   private Border bInferiorAzul;
-  private ImageIcon iFondo, iSvg1, iLogo, iUsuario, iClave, iPunto1, iFacebook1, iTwitter1, iYoutube1, iCerrar, iDimAux;
+  private ImageIcon iFondo, iLogo, iCerrar;
+  private ImageIcon iSvg1, iUsuario2, iClave2, iPunto1, iFacebook1, iTwitter1, iYoutube1, iDimAux;
 
   public LoginTemplate() {
     this.generarFuentes();
@@ -61,8 +62,8 @@ public class LoginTemplate extends JFrame {
     bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2, 0, colorAzul);
     iFondo = new ImageIcon("Clase3/resources/images/fondo.png");
     iLogo = new ImageIcon("Clase3/resources/images/logo.png");
-    iUsuario = new ImageIcon("Clase3/resources/images/usuario.png");
-    iClave = new ImageIcon("Clase3/resources/images/clave.png");
+    iUsuario2 = new ImageIcon("Clase3/resources/images/usuario2.png");
+    iClave2 = new ImageIcon("Clase3/resources/images/clave2.png");
     iPunto1 = new ImageIcon("Clase3/resources/images/punto1.png");
     iFacebook1 = new ImageIcon("Clase3/resources/images/facebook1.png");
     iTwitter1 = new ImageIcon("Clase3/resources/images/twitter1.png");
@@ -128,14 +129,14 @@ public class LoginTemplate extends JFrame {
     lNotificaciones.setHorizontalAlignment(SwingConstants.CENTER);
     pDerecha.add(lNotificaciones);
 
-    iDimAux = new ImageIcon(iUsuario.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(iUsuario2.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
     lUsuario = new JLabel();
     lUsuario.setBounds(40, 140, 30, 30);
     lUsuario.setIcon(iDimAux);
     pDerecha.add(lUsuario);
 
-    iDimAux = new ImageIcon(iClave.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(iClave2.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
     lClave = new JLabel();
     lClave.setBounds(40, 270, 30, 30);
