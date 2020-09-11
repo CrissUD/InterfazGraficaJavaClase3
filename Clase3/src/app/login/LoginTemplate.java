@@ -44,7 +44,7 @@ public class LoginTemplate extends JFrame {
   private Font fontTPrincipal, fontTitulo, fontSubtitulo;
   // private Font fontMediana;
   private Cursor cMano;
-  private Border border;
+  private Border bInferiorAzul;
   private ImageIcon iFondo, iSvg, iLogo, iUsuario, iClave, iPunto, iFacebook, iTwitter, iYoutube, iCerrar, iDimAux;
 
   public LoginTemplate() {
@@ -58,7 +58,7 @@ public class LoginTemplate extends JFrame {
     fontSubtitulo = new Font("Forte", Font.PLAIN, 13);
     // fontMediana = new Font("LuzSans-Book", Font.PLAIN, 15);
     cMano = new Cursor(Cursor.HAND_CURSOR);
-    border = BorderFactory.createMatteBorder(0, 0, 2, 0, colorAzul);
+    bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2, 0, colorAzul);
     iFondo = new ImageIcon("Clase3/resources/images/fondo.png");
     iLogo = new ImageIcon("Clase3/resources/images/logo.png");
     iUsuario = new ImageIcon("Clase3/resources/images/usuario.png");
@@ -148,7 +148,7 @@ public class LoginTemplate extends JFrame {
     tNombreUsuario.setForeground(colorAzul);
     tNombreUsuario.setBackground(Color.WHITE);
     tNombreUsuario.setCaretColor(colorGrisOscuro);
-    tNombreUsuario.setBorder(border);
+    tNombreUsuario.setBorder(bInferiorAzul);
     tNombreUsuario.setHorizontalAlignment(SwingConstants.CENTER);
     pDerecha.add(tNombreUsuario);
 
@@ -157,7 +157,7 @@ public class LoginTemplate extends JFrame {
     tClaveUsuario.setLocation((pDerecha.getWidth() - tClaveUsuario.getWidth()) / 2, 260);
     tClaveUsuario.setForeground(colorAzul);
     tClaveUsuario.setCaretColor(colorGrisOscuro);
-    tClaveUsuario.setBorder(border);
+    tClaveUsuario.setBorder(bInferiorAzul);
     tClaveUsuario.setHorizontalAlignment(SwingConstants.CENTER);
     pDerecha.add(tClaveUsuario);
 

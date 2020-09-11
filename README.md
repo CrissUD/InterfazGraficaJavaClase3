@@ -25,7 +25,7 @@ Recordando la sesión anterior, se había creado una interfaz gráfica para un L
 
 # Objetos Decoradores
 
-En esta clase se va a explorar la forma de crear e incorporar objetos decoradores para que el login de usuario tenga un mejor aspecto. Para esto vamos a ver estos items principales:
+En esta clase se va a explorar la forma de crear e incorporar objetos decoradores para que el login de usuario tenga un mejor aspecto. Para esto se van a ver estos items principales:
 * **Etapas de creación de Objetos Decoradores**
 * **Creación de Objetos Decoradores**
 
@@ -226,14 +226,14 @@ Aunque al incorporar algunas fuentes en el proyecto UI estas se verán reflejada
 
 Para esto es posible registrar la fuente en el **GraphicsEnvironment** de Java y de esta forma las fuentes estarán siempre incorporadas en la aplicación sin afectar en que sistema se corra. 
 
-Lo primero que se debe hacer es colocar los archivos de las fuentes a usar dentro del proyecto, para esto se crea un paquete llamado resources y dentro de este otro paquete llamado fonts.
+Lo primero que se debe hacer es colocar los archivos de las fuentes a usar dentro del proyecto, para esto se crea un paquete llamado **resources** que estará en la raíz del proyecto junto a la carpeta **src** y dentro de este otro paquete llamado **fonts**.
 
 <div align='center'>
-    <img  src='https://i.imgur.com/uT0Awpj.png'>
-    <p>Nuevo paquete para incorporar fuentes.</p>
+  <img  src='https://i.imgur.com/uT0Awpj.png'>
+  <p>Nuevo paquete para incorporar fuentes.</p>
 </div>
 
-Allí vamos a colocar los archivos de las fuentes que por lo general tienen una extensión **.TTF** para este ejemplo se guardara la fuente **LuzSans-Book** que se descargo desde internet.
+Allí se colocan los archivos de las fuentes que por lo general tienen una extensión **.TTF** para este ejemplo se guardara la fuente **LuzSans-Book** que se descargo desde internet.
 
 <div align='center'>
     <img  src='https://i.imgur.com/1P7OCC7.png'>
@@ -247,30 +247,30 @@ private void generarFuentes() {
 }
 ```
 
-Dentro vamos a ejemplificar un objeto tipo **GraphicsEnvironment** este objeto se encarga de guardar todas las configuraciones globales de nuestra aplicación, para ejemplificar este objeto se debe llamar al método **getLocalGraphicsEnvironment** y ademas se crea un Try/Catch para controlar un posible error al generar la fuente:
+Dentro se va a ejemplificar un objeto tipo **GraphicsEnvironment** este objeto se encarga de guardar todas las configuraciones globales de nuestra aplicación, para ejemplificar este objeto se debe llamar al método **getLocalGraphicsEnvironment** y ademas se crea un Try/Catch para controlar un posible error al generar la fuente:
 
 ```javascript
 private void generarFuentes() {
-    try {
-      GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+  try {
+    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 
-    } catch (IOException | FontFormatException e) {
-      System.out.println(e);
-    }
+  } catch (IOException | FontFormatException e) {
+    System.out.println(e);
   }
+}
 ```
 
-Ahora se debe indicar al objeto de entorno gráficos que vamos a registrar una nueva fuente con el método **registerFont**:
+Ahora se debe indicar al objeto de entorno gráficos que se registrará una nueva fuente con el método **registerFont**:
 
 ```javascript
 private void generarFuentes() {
-    try {
-      GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-      ge.registerFont();
-    } catch (IOException | FontFormatException e) {
-      System.out.println(e);
-    }
+  try {
+    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+    ge.registerFont();
+  } catch (IOException | FontFormatException e) {
+    System.out.println(e);
   }
+}
 ```
 
 Dentro del método se crea la nueva fuente a registrar con el método **createFont** del objeto Font, este método pedirá por parámetro:
@@ -389,20 +389,20 @@ Ahora la interfaz gráfica tiene interactividad con el Mouse cada que el usuario
 
 # Borders
 
-Los borders son aquellos que resaltan los limites de espacio de los objetos gráficos y existen una gran variedad de bordes para poner en los componentes gráficos.
-A continuación mostraremos los bordes mas importantes y cabe resaltar que la declaración e incorporación son muy similares por lo que nos concentraremos en mostrar los diferentes bordes en la ejemplificación.
+Los borders son aquellos que resaltan los limites de espacio de los objetos gráficos y existen una gran variedad de bordes para ser incorporados. A continuación se muestran los bordes mas importantes y cabe resaltar que la declaración e incorporación son muy similares por lo que solo se explicará la ejemplificación de los diferentes bordes.
 
-## Declaración
-
+* **Declaración**
+___
 ```javascript
-private Border border;
+// Al inicio de la clase
+private Border bInferiorAzul;
 ```
 
-La variable (objeto) que creemos para los objetos Border empezaran con border en minúscula seguido del nombre de la variable. En este caso solo usaremos un borde por lo que solo usaremos la palabra clave.
+La variable (objeto) que se coloca para los objetos Border empezará con b en minúscula seguido del nombre de la variable.
 
 **Nota:** 
 
-A veces por defecto Java importa la librería:
+A veces por defecto el IDE o editor de código importa la librería:
 ```javascript
 import javafx.scene.layout.Border;
 ```
@@ -411,19 +411,19 @@ Pero esa librería no va a funcionar y nos va a traer problemas. La librería co
 import javax.swing.border.Border;
 ```
 
-## Ejemplificación
+* **Ejemplificación**
+___
+A continuación se muestran los diferentes bordes que pueden crearse usando un único objeto (border) para mostrar la variedad de estos, sin embargo para el login solo se utilizará un tipo de estos bordes.
 
-A continuación mostraremos los diferentes bordes que pueden crearse usando el único objeto (border) para mostrar la variedad de estos, sin embargo en el login usaremos solo un tipo de estos bordes.
+## **BorderFactory**
 
-### **BorderFactory**
-
-Antes de mostrar los diferentes bordes debemos importar otra librería más, esta es la librería **borderFactory** de Swing que nos dará la posibilidad de crear los borders.
+Antes de mostrar los diferentes bordes se debe importar otra librería más, esta es la librería **borderFactory** de Swing que dará la posibilidad de crear los borders.
 
 ```javascript
 import javax.swing.BorderFactory;
 ```
 
-### **LineBorder**
+## **LineBorder**
 
 Dibuja en los limites del objeto gráfico un borde con una linea:
 
@@ -431,23 +431,23 @@ Dibuja en los limites del objeto gráfico un borde con una linea:
 border = BorderFactory.createLineBorder(colorAzul, 2, true);
 ```
 
-Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createLineBorder**.
+Se puede observar que para crear un borde se debe llamar primero a la clase **BorderFactory** y seleccionar el método **createLineBorder**.
+
 Los parámetros que recibe son:
+- **Color de linea:** Recibe un objeto decorador tipo Color y representa el color de la linea.
+- **Grosor:** Recibe un numero entero que representa el grosor de la linea.
+- **Bordes redondos:** Recibe un booleano para indicar si quiere que las esquinas del borde estén redondeadas o no. El cambio será muy mínimo, si coloca true y no ve el cambio no hay por que preocuparse.
 
-- **Color de linea:** recibe un objeto decorador tipo Color y representa el color de la linea.
-- **Grosor:** recibe un numero entero que representa el grosor de la linea.
-- **Bordes redondos:** recibe un booleano para indicar si quiere que las esquinas del borde estén redondeadas o no. Así pongamos True el cambio sera muy mínimo, no te preocupes si no notas el cambio.
-
-#### Ejemplo
+* **Resultado:**
 
 <div align="center">
   <img  src="https://i.imgur.com/f7GqwR3.png">
   <p>LineBorder en un JTextField</p>
 </div>
 
-### **LoweredBevelBorder**
+## **LoweredBevelBorder**
 
-Dibuja un borde basado en sombras para crear un efecto en el cual el objeto gráfico pareciera estar hundido con respecto a la ventana. Este efecto se consigue dibujando las sombras en la parte superior y parte izquierda del objeto gráfico. Existen dos variaciones **LoweredBevelBorder** o **LoweredSoftBevelBorder**, según la propia Documentación de Java la variación con el **Soft** genera sombras mas suaves en las esquinas sin embargo es difícil notar la diferencia.
+Dibuja un borde basado en sombras para crear un efecto en el cual el objeto gráfico pareciera estar hundido con respecto a la ventana. Este efecto se consigue dibujando las sombras en la parte superior izquierda del objeto gráfico. Existen dos variaciones **LoweredBevelBorder** o **LoweredSoftBevelBorder**, según la propia Documentación de Java la variación con el **Soft** genera sombras mas suaves en las esquinas sin embargo es difícil notar la diferencia.
 
 Una desventaja de este tipo de bordes es que solo se notara cuando la ventana o panel donde esta el objeto gráfico tiene el color por defecto (gris) de lo contrario solo se vera con dos lineas en la parte izquierda y superior.
 
@@ -455,18 +455,18 @@ Una desventaja de este tipo de bordes es que solo se notara cuando la ventana o 
 border = BorderFactory.createLoweredBevelBorder();
 ```
 
-Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createLoweredBevelBorder**.
+Se observa que para crear el borde se debe llamar primero a la clase **BorderFactory** y se selecciona el método **createLoweredBevelBorder**.
 
-#### Ejemplo
+* **Resultado:**
 
 <div align="center">
   <img  src="https://i.imgur.com/Qt65uQT.png">
   <p>LoweredBevelBorder en un JTextField</p>
 </div>
 
-### **RaisedBevelBorder**
+## **RaisedBevelBorder**
 
-Dibuja un borde basado en sombras para crear un efecto en el cual el objeto gráfico pareciera estar encima con respecto a la ventana. Este efecto se consigue dibujando las sombras en la parte inferior y parte derecha del objeto gráfico. Existen dos variaciones **RaisedBevelBorder** o **RaisedSoftBevelBorder**, según la propia Documentación de Java la variación con el **Soft** genera sombras mas suaves en las esquinas sin embargo es difícil notar la diferencia.
+Dibuja un borde basado en sombras para crear un efecto en el cual el objeto gráfico pareciera estar por encima con respecto a la ventana. Este efecto se consigue dibujando las sombras en la parte inferior derecha del objeto gráfico. Existen dos variaciones **RaisedBevelBorder** o **RaisedSoftBevelBorder**, según la propia Documentación de Java la variación con el **Soft** genera sombras mas suaves en las esquinas sin embargo es difícil notar la diferencia.
 
 De nuevo la desventaja de este tipo de bordes es que solo se notara cuando la ventana o panel donde esta el objeto gráfico tiene el color por defecto (gris) de lo contrario solo se vera con dos lineas en la parte derecha e inferior.
 
@@ -474,25 +474,25 @@ De nuevo la desventaja de este tipo de bordes es que solo se notara cuando la ve
 border = BorderFactory.createRaisedBevelBorder();
 ```
 
-Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createRaisedBevelBorder**.
+Se puede observar que para crear el borde se debe llamar primero a la clase **BorderFactory** y luego seleccionar el método **createRaisedBevelBorder**.
 
-#### Ejemplo
+* **Resultado:**
 
 <div align="center">
   <img  src="https://i.imgur.com/uPaiafP.png">
   <p>RaisedBevelBorder en un JTextField</p>
 </div>
 
-### **BevelBorder**
+## **BevelBorder**
 
-Una buena solución al las desventajas de los bordes anteriores puede ser este borde que en realidad es una combinación y mejora de los dos anteriores, este borde recibe colores en su constructor lo que hace que podamos usarlos sobre cualquier color de fondo. Entonces un BevelBorder se caracteriza por dibujar 4 lineas:
+Una buena solución al las desventajas de los bordes anteriores puede ser este borde, que en realidad es una combinación y mejora de los dos anteriores, este borde recibe colores en su constructor lo que hace que pueda ser usado sobre cualquier color de fondo. Entonces un BevelBorder se caracteriza por dibujar 4 lineas:
 
 - **Linea Externa Lower:** dibuja una linea en la parte superior y en la parte izquierda del objeto y estará en el la parte externa.
 - **Linea Interna Lower:** dibuja una linea en la parte superior y en la parte izquierda del objeto y estará en el la parte interna.
 - **Linea Externa Raise:** dibuja una linea en la parte inferior y en la parte derecha del objeto y estará en el la parte externa.
 - **Linea Interna Raise:** dibuja una linea en la parte inferior y en la parte derecha del objeto y estará en el la parte interna.
 
-De igual manera este tiene dos variaciones **BevelBorder** y **SoftBevelBorder** que como comentamos da un suavizado en las esquinas pero el cambio no es muy notorio.
+De igual manera este tipo de borde tiene dos variaciones **BevelBorder** y **SoftBevelBorder** que como comentamos da un suavizado en las esquinas pero el cambio no es muy notorio.
 
 ```javascript
 border = BorderFactory.createBevelBorder(
@@ -504,18 +504,18 @@ border = BorderFactory.createBevelBorder(
 );
 ```
 
-Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createBevelBorder**.
-Este recibe por parámetros:
+Se observa que para crear el borde se debe llamar primero a la clase **BorderFactory** y seleccionar el método **createBevelBorder**.
 
+Este recibe por parámetros:
 - **Tipo borde Bevel:** recibe un tipo de borde tipo Bevel (Lower o Raised) y en realidad lo que hace esta configuración es cambiar el orden de los colores que va a recibir por parámetro dependiendo de la elección.
 - **Color Externo1:** Recibe un objeto decorador tipo Color y representa el color externo ya sea del Lower o el Raise
 - **Color Interno1:** Recibe un objeto decorador tipo Color y representa el color interno que acompaña al color externo 1 ya sea del Lower o el Raise
 - **Color Externo2:** Recibe un objeto decorador tipo Color y representa el color externo del contrario a la opción escogida.
 - **Color Interno2:** Recibe un objeto decorador tipo Color y representa el color interno que acompaña al color externo 2.
 
-Cabe destacar que con este borde podemos buscar el efecto de **Hundido** o **Encima** o también buscar otros efectos con la combinación de varios colores.
+Cabe destacar que con este borde se puede el efecto de **Hundido** o **Encima** o también es posible generar otros efectos con la combinación de varios colores.
 
-#### Ejemplo
+* **Resultados:**
 
 <div align="center">
   <img  src="https://i.imgur.com/2XwTppc.png">
@@ -527,53 +527,53 @@ Cabe destacar que con este borde podemos buscar el efecto de **Hundido** o **Enc
   <p>BevelBorder en un JTextField con colores</p>
 </div>
 
-### **EtchedBorder**
+## **EtchedBorder**
 
-Este tipo de borde dibuja 2 LineBorder en el objeto gráfico dejando así una linea interna y una linea externa. Este tipo de bordes da un buen efecto de difuminado pequeño o de iluminado si se usan los colores correctos.
+Este tipo de borde dibuja 2 LineBorder en el objeto gráfico dejando así una linea interna y una linea externa que se intercalan entre si. Este tipo de bordes da un buen efecto de difuminado pequeño o de iluminado si se usan los colores correctos.
 
 ```javascript
 border = BorderFactory.createEtchedBorder(EtchedBorder.RAISED, Color.ORANGE, Color.YELLOW);
 ```
 
-Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createEtchedBorder**.
+Se puede observar que para crear el borde se debe llamar primero a la clase **BorderFactory** y seleccionar el método **createEtchedBorder**.
+
 Este recibe por parámetros:
-
 - **Tipo borde Etched:** recibe un tipo de borde tipo Etched (Lower, Raised) y en realidad lo que hace esta configuración es cambiar el orden de los colores que va a recibir por parámetro dependiendo de la elección.
-- **Color Externo:** Recibe un objeto decorador tipo Color y representa el color externo.
-- **Color Interno:** Recibe un objeto decorador tipo Color y representa el color interno.
+- **Color:** Recibe un objeto decorador tipo Color y representa el color de una de las lineas del borde que en una parte será externa pero en otra interna.
+- **Color:** Recibe un objeto decorador tipo Color y representa el color de una de las lineas del borde que en una parte será externa pero en otra interna.
 
-#### Ejemplo
+* **Resultado:**
 
 <div align="center">
   <img  src="https://i.imgur.com/JdU1kRH.png">
   <p>EtchedBorder en un JTextField</p>
 </div>
 
-### **MatteBorder**
+## **MatteBorder**
 
-Este es uno de los bordes más usados y aunque su configuración es simple se puede sacar gran provecho de este. Dibuja una linea en los lados que nosotros queramos, por ejemplo para un panel en la parte izquierda seria bueno un borde en la parte derecha nada mas indicando la separación y con este tipo de Border se puede lograr.
+Este es uno de los bordes más usados y aunque su configuración es simple se puede sacar gran provecho de este. Dibuja una linea en los lados que se le indique, por ejemplo para un panel en la parte izquierda seria bueno un borde en la parte derecha nada mas indicando la separación y con este tipo de Border se puede lograr.
 
 ```javascript
 border = BorderFactory.createMatteBorder(0, 0, 3, 0, colorAzul);
 ```
 
-Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createMatteBorder**.
+Se puede observar que para crear el borde se debe llamar primero a la clase **BorderFactory** y seleccionar el método **createMatteBorder**.
+
 Este recibe por parámetros:
+- **Grosor en la linea superior:** Recibe un numero entero que indica el grosor en la linea superior.
+- **Grosor en la linea izquierda:** Recibe un numero entero que indica el grosor en la linea izquierda.
+- **Grosor en la linea inferior:** Recibe un numero entero que indica el grosor en la linea inferior.
+- **Grosor en la linea derecha:** Recibe un numero entero que indica el grosor en la linea derecha.
+- **Color del borde:** Recibe un objeto decorador tipo Color y representa el color de la linea del borde.
 
-- **grosor en la linea superior:** recibe un numero entero que indica el grosor en la linea superior.
-- **grosor en la linea izquierda:** recibe un numero entero que indica el grosor en la linea izquierda.
-- **grosor en la linea inferior:** recibe un numero entero que indica el grosor en la linea inferior.
-- **grosor en la linea derecha:** recibe un numero entero que indica el grosor en la linea derecha.
-- **Color del borde:** recibe un objeto decorador tipo Color y representa el color del borde.
-
-#### Ejemplo
+* **Ejemplo**
 
 <div align="center">
   <img  src="https://i.imgur.com/jcllQ2u.png">
   <p>MatteBorder en un JTextField</p>
 </div>
 
-### **DashedBorder**
+## **DashedBorder**
 
 Dibuja un tipo de borde con una linea punteada o intermitente para limitar el objeto gráfico.
 
@@ -581,59 +581,74 @@ Dibuja un tipo de borde con una linea punteada o intermitente para limitar el ob
 border = BorderFactory.createDashedBorder(colorAzul, 2, 3, 2, true);
 ```
 
-Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createDashedBorder**.
+Se observa que para crear el borde se debe llamar primero a la clase **BorderFactory** y seleccionar el método **createDashedBorder**.
+
 Este recibe por parámetros:
+- **Color del borde:** Recibe un objeto decorador tipo Color y representa el color de la linea del borde.
+- **Grosor de la linea:** Recibe un numero entero que indica el grosor de la linea.
+- **Largo de las lineas:** Recibe un numero entero que indica el largo de cada una de las lineas intermitentes.
+- **Espacio entre lineas:** Recibe un numero entero que indica el espacio que hay entre las lineas.
+- **Bordes redondeados:** Recibe un booleano que si se deja como True pondrá los bordes redondeados, sin embargo el efecto es poco notorio.
 
-- **Color del borde:** recibe un objeto decorador tipo Color y representa el color del borde.
-- **grosor de la linea:** recibe un numero entero que indica el grosor de la linea.
-- **largo de las lineas:** recibe un numero entero que indica el largo de cada una de las lineas intermitentes.
-- **Espacio entre lineas:** recibe un numero entero que indica el espacio que hay entre las lineas.
-- **bordes redondiados:** recibe un booleano que si se deja como True pondrá los bordes redondeados.
-
-#### Ejemplo
+* **Resultado:**
 
 <div align="center">
   <img  src="https://i.imgur.com/mk8ewhP.png">
   <p>DashedBorder en un JTextField</p>
 </div>
 
-### **CompoundBorder**
+## **EmptyBorder**
 
-Es un Border compuesto que recibe como parámetro dos objetos Borders y los combina, dejando uno como borde interno y el otro como borde externo.
+Este borde crea un borde vació en los objetos gráficos y es muy util cuando se quiere generar un espacio entre los limites del objeto gráfico y el contenido de este, creando un **Padding** gracias a este borde, ya que cuando se crea un borde este, en lugar de ocupar mas espacio externamente en un objeto gráfico, en realidad ocupa espacio internamente.
 
-A continuación veremos una implementación de este borde con la combinación de varios LineBorders para dar un efecto difuminado.
+```javascript
+border = new EmptyBorder(2, 20, 2, 2);
+```
+
+Se observa que para crear el borde no es necesario llamar al **BorderFactory** simplemente se crea bajo el objeto tipo **EmptyBorder**.
+
+Este recibe por parámetros:
+- **Grosor de borde superior:** Recibe un numero entero que indica el grosor del borde o espacio en la parte superior.
+- **Grosor de borde izquierdo:** Recibe un numero entero que indica el grosor del borde o espacio en la parte izquierda.
+- **Grosor de borde inferior:** Recibe un numero entero que indica el grosor del borde o espacio en la parte inferior.
+- **Grosor de borde derecho:** Recibe un numero entero que indica el grosor del borde o espacio en la parte derecha.
+
+## **CompoundBorder**
+
+Es un Border compuesto que recibe como parámetro dos objetos Borders y los combina, dejando un borde interno y otro borde externo.
+
+A continuación se muestra una implementación de este borde con la combinación de varios LineBorders para dar un efecto difuminado.
 
 <div align="center">
-  <img  src="https://i.imgur.com/2LxfBtH.png">
+  <img  src="https://i.imgur.com/maOour2.png">
   <p>Implementación de CompoundBorder</p>
 </div>
 
-Podemos observar que para crear el borde tenemos que llamar primero a la clase **BorderFactory** y seleccionamos la opción **createCompoundBorder**.
+Se observa que para crear este tipo de borde se debe llamar primero a la clase **BorderFactory** y seleccionar el método **createCompoundBorder**.
+
 Este recibe por parámetros:
 
-- **borde Interno:** recibe un objeto tipo Border y representa el borde interno.
-- **borde Externo:** recibe un objeto tipo Border y representa el borde Externo.
+- **Borde Interno:** Recibe un objeto tipo Border y representa el borde interno.
+- **Borde Externo:** Recibe un objeto tipo Border y representa el borde Externo.
 
-#### Resultado
+* **Resultado:**
 
 <div align="center">
   <img  src="https://i.imgur.com/cSJSD35.png">
   <p>Ejemplo de un CompoundBorder en un JPanel</p>
 </div>
 
-## Incorporación
-
-A continuación mostramos el borde que usaremos para la ventana y las incorporaciones de este en el código. También mostraremos algunas correcciones de los objetos gráficos para que tengan un mejor aspecto con la incorporación del borde. Recordar que aquí se muestra desordenado, sin embargo en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
+* **Incorporación**
+___
+A continuación se muestra el borde que se usa para la ventana y las incorporaciones de este en el código. También mostraremos algunas correcciones en la posición de los objetos gráficos para que tengan un mejor aspecto con la incorporación del borde. Recordar que aquí se muestra todo junto, sin embargo en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
 
 ```javascript
-border = BorderFactory.createMatteBorder(0, 0, 2, 0, colorAzul);
+bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2, 0, colorAzul);
 ```
 
 ```javascript
-tNombreUsuario.setSize(260, 40);
-tNombreUsuario.setBorder(border);
-tClaveUsuario.setSize(260, 40);
-tClaveUsuario.setBorder(border);
+tNombreUsuario.setBorder(bInferiorAzul);
+tClaveUsuario.setBorder(bInferiorAzul);
 cbTipoUsuario.setLocation((pDerecha.getWidth() - cbTipoUsuario.getWidth()) / 2, 195);
 ```
 
@@ -646,12 +661,11 @@ Hasta el momento la interfaz estará así:
 
 # ImagenIcon
 
-Las imágenes en las ventanas son quizás el objeto decorador determinante para que las interfaces gráficas luzcan mucho mas amigable con los usuarios. A continuación veremos la creación de estos objetos decoradores y la incorporación en la interfaz de Login para resaltar su importancia.
+Las imágenes en las ventanas son quizás el objeto decorador determinante para que una interfaz gráfica luzca mucho más amigable con los usuarios. A continuación se ve la creación de estos objetos decoradores y la incorporación en la interfaz de Login para resaltar su importancia.
 
 ## Antes de comenzar
 
-Es importante tener todos los recursos dentro de un paquete en el proyecto. Para esto crearemos una carpeta llamada **resources** que estará en la raíz del proyecto junto a la carpeta **src**
-y adentro creamos una carpeta llamada **img** allí es donde guardaremos las imágenes.
+Es importante tener todos los recursos dentro de un paquete en el proyecto. Para esto crearemos una carpeta llamada **images** que estará dentro del paquete **resources**, allí es donde se guardan las imágenes e iconos a usar.
 
 <div align="center">
   <img  src="https://i.imgur.com/y2r7c8F.png">
@@ -659,8 +673,8 @@ y adentro creamos una carpeta llamada **img** allí es donde guardaremos las im�
 </div>
 
 <div align="center">
-  <img  src="https://i.imgur.com/M8J653p.png">
-  <p>Carpeta img dentro de la carpeta resources</p>
+  <img  src="https://i.imgur.com/cHZQdyN.png">
+  <p>Carpeta images dentro de la carpeta resources</p>
 </div>
 
 <div align="center">
@@ -670,7 +684,7 @@ y adentro creamos una carpeta llamada **img** allí es donde guardaremos las im�
 
 **Nota**
 
-Estas imágenes puedes descargarlas desde este mismo repositorio, entrando a la carpeta **Clase3** seguido de la carpeta a **resources/img** y ahi podrás ver y descargar cada una de las imágenes.
+Estas imágenes pueden ser descargadas desde este mismo repositorio, entrando a la carpeta **Clase3** seguido de la carpeta a **resources/images** y ahi se prodran ver y descargar cada una de las imágenes.
 
 <div align="center">
   <img  src="https://i.imgur.com/49VKanC.png">
