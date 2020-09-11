@@ -10,31 +10,35 @@ Curso propuesto por el grupo de trabajo Semana de Ingenio y Diseño (**SID**) de
 
 ## Objetivos
 
-- Identificar las etapas para la creación de objetos decoradores y como incorporarlos en objetos gráficos para dar un mejor aspecto la interfaz Gráfica.
+- Identificar las etapas involucradas en la creación de objetos decoradores y como incorporarlos en objetos gráficos para dar un mejor aspecto la interfaz Gráfica.
 - Reconocer la importancia de los objetos decoradores y el papel que toman para que una interfaz gráfica sea más amigable con los usuarios.
 - Explorar cada uno de los objetos decoradores que ofrece Java Swing y el rol de cada uno para una personalización de las Interfaces gráficas.
 
 # Antes de comenzar
 
-Recordando la sesión anterior habíamos creado una interfaz gráfica para un Login de usuario. Y el resultado de esa clase fue una interfaz así:
+Recordando la sesión anterior, se había creado una interfaz gráfica para un Login de usuario. El resultado fue el siguiente:
 
 <div align="center">
   <img  src="https://i.imgur.com/Epxdvfw.png">
-  <p>Login de usuario creada en la clase anterior</p>
+  <p>Login de usuario creado en la sesión anterior</p>
 </div>
 
-En esta clase vamos a crear objetos decoradores para que el login de usuario tenga un mejor aspecto.
+# Objetos Decoradores
 
-# Etapas de creación de Objetos decoradores
+En esta clase se va a explorar la forma de crear e incorporar objetos decoradores para que el login de usuario tenga un mejor aspecto. Para esto vamos a ver estos items principales:
+* **Etapas de creación de Objetos Decoradores**
+* **Creación de Objetos Decoradores**
 
-Los objetos decoradores también tienen ciertas etapas en su creación, aunque estas pueden variar un poco dependiendo de los casos, sin embargo las etapas mas comunes son:
+# Etapas de creación de Objetos Decoradores
+
+Los objetos decoradores también tienen ciertas etapas en su creación, aunque estas pueden variar un poco dependiendo de los casos, las etapas más comunes son:
 
 ## Declaración
 
-La declaración de un objeto decorador consiste de igual forma en indicarle al sistema que la clase donde se esta trabajando tendrá un atributo de algún tipo de estos objetos. Esta declaración tiene 3 partes, estas son:
+La declaración de un objeto decorador consiste en indicarle al sistema que la clase donde se esta trabajando tendrá un atributo de algún tipo de estos objetos. La declaración tiene 3 partes, estas son:
 
-- **Tipo Acceso:** El tipo de acceso sera siempre privado ya que son atributos de la clase como se discutió en la primera clase.
-- **Tipo de Objeto Decorador:** Se refiere a la clase del objeto que vamos a crear (Color, Font, ImageIcon, Cursor son algunos ejemplos) y la generación de estas clases casi siempre van a necesitar la importación de la librería que soporte la creación del objeto, estas se hacen automáticamente dependiendo del editor.
+- **Tipo Acceso:** El tipo de acceso sera a menudo privado ya que son atributos de la clase y se debe respetar el principio de encapsulamiento como se discutió en la primera clase.
+- **Tipo de Objeto Decorador:** Se refiere a la clase del objeto que se va a crear (Color, Font, ImageIcon, Cursor son algunos ejemplos) y la generación de estas clases casi siempre van a necesitar la importación de la librería que soporte la creación del objeto, estas importaciones a menudo se hacen automáticamente dependiendo del IDE o editor de código.
 - **Variable:** El nombre que el programador elija darle y sera esta el objeto por el cual se podrá acceder a sus métodos.
 
 <div align="center">
@@ -44,7 +48,7 @@ La declaración de un objeto decorador consiste de igual forma en indicarle al s
 
 ## Ejemplificación
 
-La ejemplificación del objeto decorador consiste en darle un valor inicial al objeto y para esto es necesario llamar al constructor de la clase, **Cuando se realiza la ejemplificación al mismo tiempo se realiza la configuración del objeto**. Para este curso la ejemplificación se realizará dentro del **constructor** de la clase y serán los primeros objetos solo por debajo del método **super** en caso de que exista.
+La ejemplificación de un objeto decorador consiste en darle un valor inicial al objeto y para esto es necesario llamar al constructor de la clase, **Cuando se realiza la ejemplificación de un objeto decorador al mismo tiempo se realiza la configuración del objeto**. Esto quiere decir que la ejemplificación va a variar según el tipo de objeto decorador que se este creando. Para esta sesión la ejemplificación se realizará dentro del **constructor** de la clase y serán los primeros objetos solo por debajo del método **super** en caso de que exista.
 
 <div align="center">
   <img  src="https://i.imgur.com/kSIxUgy.png">
@@ -53,16 +57,16 @@ La ejemplificación del objeto decorador consiste en darle un valor inicial al o
 
 ## Incorporación
 
-La incorporación se realiza cuando un objeto gráfico por medio de su configuración llama algún método relacionado con el uso de estos tipos de objetos, por eso en lugar de adicionarse mas bien se incorporan a un objeto gráfico.
+Un objeto decorador no puede ser agregado directamente a la interfaz Gráfica, necesita ser incorporado a un objeto gráfico para que sea visible. La incorporación se realiza en la etapa de **configuración** de un objeto gráfico cuando se llama algún método relacionado con el uso del objeto decorador en cuestión, esto puede ser por ejemplo para dar un color de fondo, color de letra, estilo de letra o borde a un objeto gráfico. Por esta razón en lugar de adicionarse mas bien se incorporan a un objeto gráfico.
 
 <div align="center">
   <img  src="https://i.imgur.com/bJwjfni.png">
   <p>Incorporación de un objeto decorador</p>
 </div>
 
-# Creación de objetos Decoradores.
+# Creación de Objetos Decoradores
 
-En esta sección aprenderemos la forma de crear objetos Decoradores para ser incorporados, basándonos en los 3 pasos que acabamos de ver. Los objetos explicados a continuación serán:
+En esta sección se verá la forma de crear objetos Decoradores para ser incorporados, basándose en las 3 etapas que se acabaron de explicar. Los objetos a explorar a continuación serán:
 
 - **Color**
 - **Font**
@@ -72,13 +76,13 @@ En esta sección aprenderemos la forma de crear objetos Decoradores para ser inc
 
 # Color
 
-Los objetos decoradores de color cumplen la función de provicionarle color (Valga la redundancia) a los objetos gráficos en pantalla.
+Estos objetos decoradores cumplen la función de proporcionar color a los objetos gráficos en pantalla.
 
-Existen varias formas para crear colores en Java y a continuación mencionamos las mas importantes:
+Existen varias formas para crear colores en Java y a continuación se mencionan las mas importantes:
 
 ## Colores por defecto en Java
 
-Java trae por defecto una paleta de colores y para poder ser usados solo basta con llamar la clase **Color** y al digitar . (punto) nos traerá una variedad de colores. Es importante que la librería que nos soporta la creación de los colores sea importada, esto se hace por defecto dependiendo del editor que se maneje. Cuando usamos los colores por defecto de Java **no es necesario realizar la declaración ni la ejemplificación**.
+Java trae por defecto una paleta de colores y para poder ser usados solo basta con llamar la clase **Color** y al digitar . (punto) se desplegará una variedad de colores. Es importante que la librería que soporta la creación de los colores sea importada, esto se hace por defecto dependiendo del editor que se maneje. Cuando se usan los colores por defecto de Java **no es necesario realizar la declaración ni la ejemplificación del objeto**.
 
 <div align="center">
   <img  src="https://i.imgur.com/f1l9ddM.png">
@@ -87,60 +91,69 @@ Java trae por defecto una paleta de colores y para poder ser usados solo basta c
 
 ## Colores Personalizados
 
-Muchas veces vamos a querer colores que Java no trae por defecto y para esto necesitamos realizar la creación del objeto decorador de tipo Color:
+Muchas veces se quieren colores personalizados que Java no trae por defecto y para esto es necesario realizar la creación del objeto decorador de tipo Color:
 
-### Declaración
-
+* **Declaración**
 ```javascript
+// Al inicio de la clase
 private Color colorAzul, colorGrisOscuro;
 ```
 
-La variable (objeto) que creemos para los objetos Color empezaran con color en minúscula seguido del nombre de la variable.
+La variable (objeto) que se coloca para los objetos Color empezará con color en minúscula seguido del nombre de la variable.
 
-### Ejemplificación
-
+* **Ejemplificación**
 ```javascript
+// Dentro del constructor
 colorAzul = new Color(60, 78, 120);
 colorGrisOscuro = new Color(80, 80, 80);
 ```
 
-Podemos observar que la notación para la configuración de un color esta basado en la creación de colores mediante el sistema RGB proporcionando valores enteros que pueden ir desde 0 hasta 255. generarndo así la creación de una gran posibilidad de colores.
+Se puede observar que la notación para la configuración de un color esta basado en la creación de colores mediante el sistema RGB (Red, Green, Blue) proporcionando valores enteros que pueden ir desde 0 hasta 255. generando así la creación de una gran posibilidad de colores.
 
-### Incorporación
-
+* **Incorporación**
 ```javascript
+// Dentro del constructor
 tNombreUsuario.setForeground(colorGrisOscuro);
 tNombreUsuario.setBackground(Color.WHITE);
 tNombreUsuario.setCaretColor(colorAzul);
 ```
 
-En el anterior código se ve reflejada la incorporación de varios objetos de tipo Color para un TextField, siendo algunos de estos creados por nosotros y otros creados por defecto.
+En el anterior código se ve reflejada la incorporación de varios objetos de tipo Color para un TextField, siendo algunos de estos creados por el desarrollador y otros que vienen por defecto en Java.
 
 ## Colores con Transparencia
 
-Java también admite la creación de objetos rgba los cuales dan un gran uso y posibilidades para personalizar la interfaz gráfica. Los pasos para la creación de ese tipo de colores es la misma que los colores personalizados que acabamos de crear. Salvo en la ejemplificación donde habrá un ligero cambio.
+Java también admite la creación de objetos RGBA los cuales agregan un nuevo canal (Alfa) para configurar la transparencia del color con valores enteros que van desde 0 (siendo un color totalmente transparente) hasta 255 (siendo un color totalmente solido). Los pasos para la creación de ese tipo de colores es la misma que los colores personalizados que se acaban de crear.
 
 <div align="center">
-  <img  src="https://i.imgur.com/vhYYajs.png">
-  <p>Color con transparencia</p>
+  <img  src="https://i.imgur.com/QPaobgK.png">
+  <p>Color oscuro con transparencia casi total</p>
 </div>
-El ultimo parámetro representa el alfa y es un numero flotante que va desde 0 hasta 1, siendo 1 un color solido y siendo 0 un color totalmente transparente.
 
 ## Incorporación de los colores personalizados.
 
-A continuación mostramos las partes del código donde se incorporará los colores personalizados a los objetos gráficos. cabe destacar que aunque aquí se muestre desordenado, en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
+A continuación se muestran las partes del código donde se incorporan los colores personalizados creados anteriormente a los objetos gráficos. Cabe destacar que aunque aquí se ven todas las incorporaciones juntas, en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
 
 ```javascript
+// En la respectiva configuración del objeto gráfico
 lEslogan.setForeground(colorGrisOscuro);
+
 lTituloLogin.setForeground(colorGrisOscuro);
+
 lNotificaciones.setForeground(colorGrisOscuro);
+
 tNombreUsuario.setForeground(colorAzul);
 tNombreUsuario.setCaretColor(colorGrisOscuro);
+
 tClaveUsuario.setForeground(colorAzul);
 tClaveUsuario.setCaretColor(colorGrisOscuro);
+
 cbTipoUsuario.setForeground(colorAzul);
+
 bEntrar.setBackground(colorAzul);
+bEntrar.setForeground(Color.WHITE);
+
 bRegistrarse.setBackground(colorAzul);
+bRegistrarse.setForeground(Color.WHITE);
 ```
 
 Hasta el momento la Interfaz Gráfica se ve asi:
@@ -152,49 +165,46 @@ Hasta el momento la Interfaz Gráfica se ve asi:
 
 # Font
 
-Los objetos Font son muy importantes para que las interfaces de usuario tengan una personalización, un objeto tipo Font se encarga de proporcionar 3 elementos:
+Un objeto decorador Font se encarga de darle características gráficas a los textos vistos en la interfaz gráfica, para agregar dichas características un objeto Font se encarga de proporcionar 3 elementos:
 
-- **Tipografía:** da un nuevo aspecto a la letra de acuerdo a la tipografía seleccionada, estas fuentes que el programador puede seleccionar deben estar instaladas en la maquina previamente.
-- **Estilo letra:** da un estilo a la letra de acuerdo a la configuración dada, esta podría ser **negrilla** _cursiva_ <u>subrayado</u> etc.
-- **Tamaño de la fuente:** Le da el tamaño de la fuente dependiendo del numero entero que reciba.
+- **Tipografía:** Da un nuevo aspecto a la letra de acuerdo a la tipografía seleccionada, la tipografía por defecto depende del sistema operativo que corra la aplicación. Para que una tipografía diferente pueda verse reflejada en la interfaz debe estar instalada previamente en el sistema operativo, una solución a esto es registrar la fuente dentro del **GraphicsEnvironment** de Java (más adelante se habla de este punto).
+- **Estilo letra:** Da un estilo a la letra de acuerdo a la configuración dada, esta podría ser por ejemplo **negrilla** _cursiva_ <u>subrayado</u> etc.
+- **Tamaño de la fuente:** Le da el tamaño de la fuente dependiendo del numero entero que reciba como parámetro.
 
-A continuación crearemos los objetos Font:
+A continuación se crean los objetos Font que se utilizarán para el Login de usuario:
 
-## Declaración
-
+* **Declaración**
 ```javascript
+// al inicio de la clase
 private Font fontTPrincipal, fontTitulo, fontSubtitulo;
 ```
 
-La variable (objeto) que creemos para los objetos Font empezaran con font en minúscula seguido del nombre de la variable.
+La variable (objeto) que se coloca para los objetos Font empezará con font en minúscula seguido del nombre de la variable.
 
-## Ejemplificación
-
+* **Ejemplificación**
 ```javascript
 fontTPrincipal = new Font("Rockwell Extra Bold", Font.PLAIN, 20);
-fontTitulo = new Font("Montserrat", Font.PLAIN, 18);
+fontTitulo = new Font("Calibri (Cuerpo)", Font.BOLD, 17);
 fontSubtitulo = new Font("Forte", Font.PLAIN, 13);
 ```
 
-Podemos observar que al momento de ejemplificar el objeto se realiza su respectiva configuración desde el constructor pasando 3 parámetros que ya mencionamos con anterioridad.
+Se puede observar que al momento de ejemplificar el objeto se realiza su respectiva configuración desde el constructor pasando los 3 parámetros ya mencionados con anterioridad. Algunos puntos a resaltar son:
 
-- La fuente dada debe estar en comillas.
+- La tipografía dada debe estar en comillas.
 - Los diferentes estilos se pueden observar llamando a la clase Font y poniendo un . (punto).
-- El tamaño de la letra sera un numero entero.
+- El tamaño de la letra será siempre un numero entero.
 <div align="center">
   <img  src="https://i.imgur.com/Bm7ZWPA.png">
-  <p>Ejemplo de ejemplificación de objetos decoradores tipo Font</p>
+  <p>Ejemplificación de objetos decoradores tipo Font</p>
 </div>
 
-## Incorporación
-
-A continuación mostramos las partes del código donde incorporamos los objetos decoradores Font. Recordar que aquí se muestra desordenado, sin embargo en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
+* **Incorporación**
+A continuación se muestran las partes del código donde se incorporan los objetos decoradores Font. Recordar que aquí se muestran seguidas, sin embargo en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
 
 ```javascript
-lTituloApp.setBounds(100, 20, 220, 30);
+// En la respectiva configuración del objeto gráfico
 lTituloApp.setFont(fontTPrincipal);
 lEslogan.setFont(fontSubtitulo);
-lTituloLogin.setSize(150, 30);
 lTituloLogin.setFont(fontTitulo);
 lNotificaciones.setFont(fontSubtitulo);
 ```
@@ -203,14 +213,21 @@ Se puede observar que para realizar la incorporación de las fuentes se debe lla
 
 - **setFont** que recibe por parámetro un objeto decorador tipo Font y refleja un estilo en la letra del objeto gráfico.
 
-También se puede observar que se realizaron unos cambios en el tamaño de algunos label para que no hubiera conflictos cuando se incorporen las fuentes.
-
 La aplicación luce asi:
 
 <div align="center">
   <img  src="https://i.imgur.com/bzwCkb3.png">
   <p>Login de usuario con incorporación de fuentes</p>
 </div>
+
+## Registro de fuentes en el GraphicsEnvironment
+
+Aunque al incorporar algunas fuentes en el proyecto UI estas se verán reflejadas sin problema en la maquina que se corre, es posible que en otros computadores, esta no se vean reflejadas ya que el sistema operativo no tiene incorporadas dichas fuentes, por otra parte es molesto tener que instalar las fuentes que se utilicen en cada maquina nueva que se ejecute la aplicación. 
+
+Para esto es posible registrar la fuente en el **GraphicsEnvironment** y de esta forma las fuentes estarán siempre incorporadas en la aplicación sin afectar en que sistema se corra. 
+
+Lo primero que tenemos que hacer es colocar los archivos de nuestras fuentes en el proyecto, para esto vamos a crear un paquete llamado resources y dentro de esta una carpeta llamada fonts.
+
 
 # Cursor
 
