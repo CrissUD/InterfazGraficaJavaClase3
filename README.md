@@ -222,27 +222,126 @@ La aplicación luce asi:
 
 ## Registro de fuentes en el GraphicsEnvironment
 
-Aunque al incorporar algunas fuentes en el proyecto UI estas se verán reflejadas sin problema en la maquina que se corre, es posible que en otros computadores, esta no se vean reflejadas ya que el sistema operativo no tiene incorporadas dichas fuentes, por otra parte es molesto tener que instalar las fuentes que se utilicen en cada maquina nueva que se ejecute la aplicación. 
+Aunque al incorporar algunas fuentes en el proyecto UI estas se verán reflejadas sin problema en la maquina que se corre, es posible que en otros computadores, estas no se vean reflejadas ya que el sistema operativo no tiene instaladas dichas fuentes, por otra parte es molesto tener que instalar las fuentes que se utilicen en cada maquina nueva que se ejecute la aplicación. 
 
-Para esto es posible registrar la fuente en el **GraphicsEnvironment** y de esta forma las fuentes estarán siempre incorporadas en la aplicación sin afectar en que sistema se corra. 
+Para esto es posible registrar la fuente en el **GraphicsEnvironment** de Java y de esta forma las fuentes estarán siempre incorporadas en la aplicación sin afectar en que sistema se corra. 
 
-Lo primero que tenemos que hacer es colocar los archivos de nuestras fuentes en el proyecto, para esto vamos a crear un paquete llamado resources y dentro de esta una carpeta llamada fonts.
+Lo primero que se debe hacer es colocar los archivos de las fuentes a usar dentro del proyecto, para esto se crea un paquete llamado resources y dentro de este otro paquete llamado fonts.
 
+<div align='center'>
+    <img  src='https://i.imgur.com/uT0Awpj.png'>
+    <p>Nuevo paquete para incorporar fuentes.</p>
+</div>
+
+Allí vamos a colocar los archivos de las fuentes que por lo general tienen una extensión **.TTF** para este ejemplo se guardara la fuente **LuzSans-Book** que se descargo desde internet.
+
+<div align='center'>
+    <img  src='https://i.imgur.com/1P7OCC7.png'>
+    <p>Archivo TTF dentro del paquete fonts</p>
+</div>
+
+Ahora se crea un nuevo método en la clase **LoginTemplate** el cual se llamará **generarFuentes**:
+
+```javascript
+private void generarFuentes() {
+}
+```
+
+Dentro vamos a ejemplificar un objeto tipo **GraphicsEnvironment** este objeto se encarga de guardar todas las configuraciones globales de nuestra aplicación, para ejemplificar este objeto se debe llamar al método **getLocalGraphicsEnvironment** y ademas se crea un Try/Catch para controlar un posible error al generar la fuente:
+
+```javascript
+private void generarFuentes() {
+    try {
+      GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+
+    } catch (IOException | FontFormatException e) {
+      System.out.println(e);
+    }
+  }
+```
+
+Ahora se debe indicar al objeto de entorno gráficos que vamos a registrar una nueva fuente con el método **registerFont**:
+
+```javascript
+private void generarFuentes() {
+    try {
+      GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+      ge.registerFont();
+    } catch (IOException | FontFormatException e) {
+      System.out.println(e);
+    }
+  }
+```
+
+Dentro del método se crea la nueva fuente a registrar con el método **createFont** del objeto Font, este método pedirá por parámetro:
+* **Formato de la fuente**: El tipo de estilo de la fuente, normalmente se escoge la opción **TRUETYPE_FONT** para no alterar la fuente.
+* **Archivo de la fuente**: Es un objeto normalmente de tipo **File** que contiene el archivo de la fuente y se le debe pasar la dirección de donde se encuentra.
+
+```javascript
+private void generarFuentes() {
+  try {
+    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+    ge.registerFont( Font.createFont(
+        Font.TRUETYPE_FONT,
+        new File("Clase3/resources/fonts/LUZRO.ttf")
+    ));
+  } catch (IOException | FontFormatException e) {
+    System.out.println(e);
+  }
+}
+```
+
+Por cada fuente que se necesite registrar se debe llamar al método **registerFont** y hacer el mismo procedimiento. Algo a aclarar es que muchas fuentes por lo general tienen un nombre distinto al nombre del archivo, en este caso por ejemplo el archivo de la fuente es **LUZRO**, sin embargo el sistema reconocerá la fuente como **LuzSans-Book** asi que es recomendable leer la documentación de la fuente a descargar.
+
+Ahora se debe llamar al método desde el constructor, y se debe llamar antes de la ejemplificación de los objetos decoradores, o de lo contrario al crear una fuente con esta tipografía pero aun sin ser registrada no se verá reflejada:
+```javascript
+public LoginTemplate() {
+  this.generarFuentes();
+
+  ...
+  ...
+}
+```
+
+Para probar la nueva fuente registrada se va a crear una nueva fuente que se usará en el futuro para otras partes del proyecto. Aunque en el login no tendrá uso se utilizará momentáneamente en el label del titulo para verificar su correcta incorporación.
+
+* **Declaración:**
+```javascript
+// Al inicio de la clase
+private Font fontMediana;
+```
+
+* **Ejemplificación**
+```javascript
+fontMediana = new Font("LuzSans-Book", Font.PLAIN, 15);
+```
+
+* **Incorporación:**
+```javascript
+tNombreUsuario.setFont(fontMediana);
+```
+
+<div align='center'>
+    <img  src='https://i.imgur.com/macz1Ei.png'>
+    <p>Registro de fuente exitosa.</p>
+</div>
+
+Ahora no importa en que sistema se ejecute la aplicación, el programa siempre registrará la fuente y podrá usarla en cualquier entorno.
+
+***Nota:** Recordar dejar la fuente del titulo que tenia antes.*
 
 # Cursor
 
-Los cursores son todas las formas que pueden tomar el puntero del Mouse mientras pasa por alguna zona de la ventana, por ejemplo es común ver un icono de una mano cuando se pasa por un botón, una cruz cuando se esta trabajando en un espacio de dibujos (Paint por dar un ejemplo) un icono de bloqueo cuando no se pueda dar click en una parte etc.
+Los cursores son todas las formas que pueden tomar el puntero del Mouse mientras pasa por alguna zona de la ventana, por ejemplo es común ver un icono de una mano cuando se pasa por un botón, una cruz cuando se esta trabajando en un espacio de gráficos (Paint por dar un ejemplo) un icono de bloqueo cuando no se pueda dar click en una parte etc.
 
-### Declaración
-
+* **Declaración**
 ```javascript
 private Cursor cMano;
 ```
 
-La variable (objeto) que creemos para los objetos Cursor empezaran con c en minúscula seguido del nombre de la variable.
+La variable (objeto) que se coloca para los objetos Cursor empezará con c en minúscula seguido del nombre de la variable.
 
-### Ejemplificación
-
+* **Ejemplificación**
 ```javascript
 cMano = new Cursor(Cursor.HAND_CURSOR);
 ```
@@ -260,11 +359,13 @@ Java proporciona una totalidad de 15 opciones de cursores para incorporar en las
 | TEXT_CURSOR      | Cursor en forma de linea para texto               | ![](./cursores/ctext.png)    |
 | WAIT_CURSOR      | Cursor en forma circular para esperar             | ![](./cursores/cwait.png)    |
 
-### Incorporación
 
-A continuación mostramos las partes del código donde incorporamos los objetos decoradores Cursor. Recordar que aquí se muestra desordenado, sin embargo en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
+* **Incorporación**
+
+A continuación se muestran las partes del código donde incorporamos los objetos decoradores Cursor. Recordar que aquí se muestra todo junto, sin embargo, en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
 
 ```javascript
+// En la respectiva configuración del objeto gráfico
 bEntrar.setCursor(cMano);
 bCerrar.setCursor(cMano);
 bRegistrarse.setCursor(cMano);
@@ -277,7 +378,7 @@ checkNo.setCursor(cMano);
 
 Se puede observar que el método para incorporar este objeto decorador es:
 
-- **setCursor:** recibe por parámetro un objeto de tipo Cursor y se ve reflejado cuando el usuario pasa por encima del objeto gráfico con el Mouse cambiando el icono del puntero.
+- **setCursor:** Recibe por parámetro un objeto de tipo Cursor y se ve reflejado cuando el usuario pasa por encima del objeto gráfico con el Mouse cambiando el icono del puntero.
 
 Ahora la interfaz gráfica tiene interactividad con el Mouse cada que el usuario pasa por los botones:
 

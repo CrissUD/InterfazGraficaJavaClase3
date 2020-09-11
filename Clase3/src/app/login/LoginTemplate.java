@@ -4,6 +4,11 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Image;
 import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+
+import java.io.File;
+import java.io.IOException;
 
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
@@ -37,29 +42,33 @@ public class LoginTemplate extends JFrame {
   private Color colorAzul, colorGrisOscuro;
   // private Color colorNegroTransparente;
   private Font fontTPrincipal, fontTitulo, fontSubtitulo;
+  // private Font fontMediana;
   private Cursor cMano;
   private Border border;
   private ImageIcon iFondo, iSvg, iLogo, iUsuario, iClave, iPunto, iFacebook, iTwitter, iYoutube, iCerrar, iDimAux;
 
   public LoginTemplate() {
+    this.generarFuentes();
+
     colorAzul = new Color(60, 78, 120);
     colorGrisOscuro = new Color(80, 80, 80);
     // colorNegroTransparente = new Color(30, 30, 30, 30);
     fontTPrincipal = new Font("Rockwell Extra Bold", Font.PLAIN, 20);
     fontTitulo = new Font("Calibri (Cuerpo)", Font.BOLD, 17);
     fontSubtitulo = new Font("Forte", Font.PLAIN, 13);
+    // fontMediana = new Font("LuzSans-Book", Font.PLAIN, 15);
     cMano = new Cursor(Cursor.HAND_CURSOR);
     border = BorderFactory.createMatteBorder(0, 0, 2, 0, colorAzul);
-    iFondo = new ImageIcon("Clase3/resources/img/fondo.png");
-    iLogo = new ImageIcon("Clase3/resources/img/logo.png");
-    iUsuario = new ImageIcon("Clase3/resources/img/usuario.png");
-    iClave = new ImageIcon("Clase3/resources/img/clave.png");
-    iPunto = new ImageIcon("Clase3/resources/img/punto.png");
-    iFacebook = new ImageIcon("Clase3/resources/img/facebook.png");
-    iTwitter = new ImageIcon("Clase3/resources/img/twitter.png");
-    iYoutube = new ImageIcon("Clase3/resources/img/youtube.png");
-    iSvg = new ImageIcon("Clase3/resources/img/imagen.png");
-    iCerrar = new ImageIcon("Clase3/resources/img/cerrar.png");
+    iFondo = new ImageIcon("Clase3/resources/images/fondo.png");
+    iLogo = new ImageIcon("Clase3/resources/images/logo.png");
+    iUsuario = new ImageIcon("Clase3/resources/images/usuario.png");
+    iClave = new ImageIcon("Clase3/resources/images/clave.png");
+    iPunto = new ImageIcon("Clase3/resources/images/punto.png");
+    iFacebook = new ImageIcon("Clase3/resources/images/facebook.png");
+    iTwitter = new ImageIcon("Clase3/resources/images/twitter.png");
+    iYoutube = new ImageIcon("Clase3/resources/images/youtube.png");
+    iSvg = new ImageIcon("Clase3/resources/images/imagen.png");
+    iCerrar = new ImageIcon("Clase3/resources/images/cerrar.png");
 
     pIzquierda = new JPanel();
     pIzquierda.setSize(600, 500);
@@ -172,8 +181,6 @@ public class LoginTemplate extends JFrame {
     bEntrar.setCursor(cMano);
     pDerecha.add(bEntrar);
 
-    iDimAux = new ImageIcon(iCerrar.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
-
     bRegistrarse = new JButton("Registrarse");
     bRegistrarse.setBounds(240, 460, 145, 35);
     bRegistrarse.setFocusable(false);
@@ -181,6 +188,8 @@ public class LoginTemplate extends JFrame {
     bRegistrarse.setForeground(Color.WHITE);
     bRegistrarse.setCursor(cMano);
     pDerecha.add(bRegistrarse);
+    
+    iDimAux = new ImageIcon(iCerrar.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
 
     bCerrar = new JButton();
     bCerrar.setBounds(350, 10, 45, 30);
@@ -278,5 +287,17 @@ public class LoginTemplate extends JFrame {
     setUndecorated(true);
     setLayout(null);
     setVisible(true);
+  }
+
+  private void generarFuentes() {
+    try {
+      GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+      ge.registerFont( Font.createFont(
+          Font.TRUETYPE_FONT,
+          new File("Clase3/resources/fonts/LUZRO.ttf")
+      ));
+    } catch (IOException | FontFormatException e) {
+      System.out.println(e);
+    }
   }
 }
