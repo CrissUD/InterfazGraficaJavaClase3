@@ -85,7 +85,10 @@ public class LoginTemplate extends JFrame {
     pDerecha.setLayout(null);
     this.add(pDerecha);
 
-    iDimAux = new ImageIcon(iLogo.getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(
+      iLogo.getImage()
+        .getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)
+    );
 
     lLogo = new JLabel();
     lLogo.setBounds(50, 20, 40, 40);
@@ -98,7 +101,10 @@ public class LoginTemplate extends JFrame {
     lTituloApp.setFont(fontTPrincipal);
     pIzquierda.add(lTituloApp);
 
-    iDimAux = new ImageIcon(iSvg1.getImage().getScaledInstance(500, 345, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(
+      iSvg1.getImage()
+        .getScaledInstance(500, 345, Image.SCALE_AREA_AVERAGING)
+    );
 
     lSvg1 = new JLabel();
     lSvg1.setBounds(100, 100, 500, 345);
@@ -129,14 +135,20 @@ public class LoginTemplate extends JFrame {
     lNotificaciones.setHorizontalAlignment(SwingConstants.CENTER);
     pDerecha.add(lNotificaciones);
 
-    iDimAux = new ImageIcon(iUsuario2.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(
+      iUsuario2.getImage()
+        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+    );
 
     lUsuario = new JLabel();
     lUsuario.setBounds(40, 140, 30, 30);
     lUsuario.setIcon(iDimAux);
     pDerecha.add(lUsuario);
 
-    iDimAux = new ImageIcon(iClave2.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(
+      iClave2.getImage()
+        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+    );
 
     lClave = new JLabel();
     lClave.setBounds(40, 270, 30, 30);
@@ -190,7 +202,10 @@ public class LoginTemplate extends JFrame {
     bRegistrarse.setCursor(cMano);
     pDerecha.add(bRegistrarse);
     
-    iDimAux = new ImageIcon(iCerrar.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(
+      iCerrar.getImage()
+        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+    );
 
     bCerrar = new JButton();
     bCerrar.setBounds(350, 10, 45, 30);
@@ -204,7 +219,10 @@ public class LoginTemplate extends JFrame {
     bCerrar.setBorder(null);
     pDerecha.add(bCerrar);
 
-    iDimAux = new ImageIcon(iPunto1.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(
+      iPunto1.getImage()
+        .getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
+    );
 
     bOpcion1 = new JButton();
     bOpcion1.setBounds(10, 220, 30, 20);
@@ -233,28 +251,43 @@ public class LoginTemplate extends JFrame {
     bOpcion3.setBorder(null);
     pIzquierda.add(bOpcion3);
 
-    iDimAux = new ImageIcon(iFacebook1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(
+      iFacebook1.getImage()
+        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+    );
 
     lFacebook = new JLabel();
     lFacebook.setBounds(20, 460, 30, 30);
     lFacebook.setIcon(iDimAux);
+    lFacebook.setCursor(cMano);
     pIzquierda.add(lFacebook);
 
-    iDimAux = new ImageIcon(iTwitter1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(
+      iTwitter1.getImage()
+        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+    );
 
     lTwitter = new JLabel();
     lTwitter.setBounds(60, 460, 30, 30);
     lTwitter.setIcon(iDimAux);
+    lTwitter.setCursor(cMano);
     pIzquierda.add(lTwitter);
 
-    iDimAux = new ImageIcon(iYoutube1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(
+      iYoutube1.getImage()
+        .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+    );
 
     lYoutube = new JLabel();
     lYoutube.setBounds(100, 460, 30, 30);
     lYoutube.setIcon(iDimAux);
+    lYoutube.setCursor(cMano);
     pIzquierda.add(lYoutube);
 
-    iDimAux = new ImageIcon(iFondo.getImage().getScaledInstance(600, 600, Image.SCALE_AREA_AVERAGING));
+    iDimAux = new ImageIcon(
+      iFondo.getImage()
+        .getScaledInstance(600, 600, Image.SCALE_AREA_AVERAGING)
+    );
 
     lFondo = new JLabel();
     lFondo.setBounds(0, 0, 600, 600);

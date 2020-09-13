@@ -832,7 +832,10 @@ import java.awt.Image;
 Para realizar esta redimension realizaremos este código justo encima de la creación del JLabel que contiene la imágen de fondo:
 
 ```javascript
-iDimAux = new ImageIcon(iFondo.getImage().getScaledInstance(600, 600, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(
+  iFondo.getImage()
+    .getScaledInstance(600, 600, Image.SCALE_AREA_AVERAGING)
+);
 
 lFondo = new JLabel();
 ...
@@ -868,7 +871,10 @@ Y ahora la interfaz se verá así:
 A continuación se muestra la creación de los objetos JLabel que incorporan las imágenes repitiendo el proceso que vimos anteriormente. Recordar que aunque se muestre el código aquí todo junto en la aplicación se ponen en el orden de tal manera que tenemos presente la organización de objetos con respecto al eje Z.
 
 ```javascript
-iDimAux = new ImageIcon(iLogo.getImage().getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(
+  iLogo.getImage()
+    .getScaledInstance(40, 40, Image.SCALE_AREA_AVERAGING)
+);
 
 lLogo = new JLabel();
 lLogo.setBounds(50, 20, 40, 40);
@@ -877,7 +883,10 @@ pIzquierda.add(lLogo);
 ```
 
 ```javascript
-iDimAux = new ImageIcon(iSvg1.getImage().getScaledInstance(500, 345, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(
+  iSvg1.getImage()
+    .getScaledInstance(500, 345, Image.SCALE_AREA_AVERAGING)
+);
 
 lSvg1 = new JLabel();
 lSvg1.setBounds(100, 100, 500, 345);
@@ -886,37 +895,55 @@ pIzquierda.add(lSvg1);
 ```
 
 ```javascript
-iDimAux = new ImageIcon(iFacebook1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(
+  iFacebook1.getImage()
+    .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+);
 
 lFacebook = new JLabel();
 lFacebook.setBounds(20, 420, 30, 30);
 lFacebook.setIcon(iDimAux);
+lFacebook.setCursor(cMano);
 pIzquierda.add(lFacebook);
 
-iDimAux = new ImageIcon(iTwitter1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(
+  iTwitter1.getImage()
+    .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+);
 
 lTwitter = new JLabel();
 lTwitter.setBounds(60, 420, 30, 30);
 lTwitter.setIcon(iDimAux);
+lTwitter.setCursor(cMano);
 pIzquierda.add(lTwitter);
 
-iDimAux = new ImageIcon(iYoutube1.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(
+  iYoutube1.getImage()
+    .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+);
 
 lYoutube = new JLabel();
 lYoutube.setBounds(100, 420, 30, 30);
 lYoutube.setIcon(iDimAux);
+lYoutube.setCursor(cMano);
 pIzquierda.add(lYoutube);
 ```
 
 ```javascript
-iDimAux = new ImageIcon(iUsuario2.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(
+  iUsuario2.getImage()
+    .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+);
 
 lUsuario = new JLabel();
 lUsuario.setBounds(40, 130, 30, 30);
 lUsuario.setIcon(iDimAux);
 pDerecha.add(lUsuario);
 
-iDimAux = new ImageIcon(iClave2.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(
+  iClave2.getImage()
+    .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+);
 
 lClave = new JLabel();
 lClave.setBounds(40, 250, 30, 30);
@@ -940,7 +967,10 @@ Se empieza por los botones opciones, la imágen que se quiere incorporar esta co
 Primero se redimensiona la imágen par a luego incorporarla en los botones:
 
 ```javascript
-iDimAux = new ImageIcon(iPunto1.getImage().getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(
+  iPunto1.getImage()
+    .getScaledInstance(20, 20, Image.SCALE_AREA_AVERAGING)
+);
 
 bOpcion1.setIcon(iDimAux);
 bOpcion2.setIcon(iDimAux);
@@ -992,7 +1022,10 @@ bOpcion3.setBorder(null);
 Ya esta hecho ! ahora se repite el proceso para el botón bCerrar:
 
 ```javascript
-iDimAux = new ImageIcon(iCerrar.getImage().getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING));
+iDimAux = new ImageIcon(
+  iCerrar.getImage()
+    .getScaledInstance(30, 30, Image.SCALE_AREA_AVERAGING)
+);
 
 bCerrar = new JButton(); // Se quita el texto que tenia al inicio
 bCerrar.setIcon(iDimAux);
