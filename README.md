@@ -16,6 +16,8 @@ Curso propuesto por el grupo de trabajo Semana de Ingenio y Diseño (**SID**) de
 
 # Antes de comenzar
 
+### **Recordatorio**
+
 Recordando la sesión anterior, se había creado una interfaz gráfica para un Login de usuario. El resultado fue el siguiente:
 
 <div align="center">
