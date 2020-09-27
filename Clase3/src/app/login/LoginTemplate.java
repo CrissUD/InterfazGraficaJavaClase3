@@ -165,7 +165,7 @@ public class LoginTemplate extends JFrame {
     tNombreUsuario.setHorizontalAlignment(SwingConstants.CENTER);
     pDerecha.add(tNombreUsuario);
 
-    tClaveUsuario = new JPasswordField("clave Usuario");
+    tClaveUsuario = new JPasswordField("Clave Usuario");
     tClaveUsuario.setSize(260, 40);
     tClaveUsuario.setLocation((pDerecha.getWidth() - tClaveUsuario.getWidth()) / 2, 260);
     tClaveUsuario.setForeground(colorAzul);
