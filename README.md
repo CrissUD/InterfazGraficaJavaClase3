@@ -44,7 +44,7 @@ La declaración de un objeto decorador consiste en indicarle al sistema que la c
 - **Variable:** El nombre que el programador elija darle y sera esta el objeto por el cual se podrá acceder a sus métodos.
 
 <div align="center">
-  <img  src="https://i.imgur.com/9TabmI5.png">
+  <img  src="https://i.imgur.com/cyPIuxV.png">
   <p>Declaración de un objeto decorador</p>
 </div>
 
@@ -53,7 +53,7 @@ La declaración de un objeto decorador consiste en indicarle al sistema que la c
 La ejemplificación de un objeto decorador consiste en darle un valor inicial al objeto y para esto es necesario llamar al constructor de la clase, **Cuando se realiza la ejemplificación de un objeto decorador al mismo tiempo se realiza la configuración del objeto**. Esto quiere decir que la ejemplificación va a variar según el tipo de objeto decorador que se este creando. Para esta sesión la ejemplificación se realizará dentro del **constructor** de la clase y serán los primeros objetos solo por debajo del método **super** en caso de que exista.
 
 <div align="center">
-  <img  src="https://i.imgur.com/kSIxUgy.png">
+  <img  src="https://i.imgur.com/RwpPmSA.png">
   <p>Ejemplificación de un objeto decorador</p>
 </div>
 
@@ -62,7 +62,7 @@ La ejemplificación de un objeto decorador consiste en darle un valor inicial al
 Un objeto decorador no puede ser agregado directamente a la interfaz Gráfica, necesita ser incorporado a un objeto gráfico para que sea visible. La incorporación se realiza en la etapa de **configuración** de un objeto gráfico cuando se llama algún método relacionado con el uso del objeto decorador en cuestión, esto puede ser por ejemplo para dar un color de fondo, color de letra, estilo de letra o borde a un objeto gráfico. Por esta razón en lugar de adicionarse mas bien se incorporan a un objeto gráfico.
 
 <div align="center">
-  <img  src="https://i.imgur.com/bJwjfni.png">
+  <img  src="https://i.imgur.com/gWsDy6I.png">
   <p>Incorporación de un objeto decorador</p>
 </div>
 
@@ -1062,7 +1062,7 @@ Se pueden notar algunas cosas:
 - **La aplicación ya no cierra** Este problema se solucionará en otra clase, por ahora podemos cerrarlo desde la barra de tareas.
 
 <div align="center">
-  <img  src="https://i.imgur.com/8Mjvxb4.png">
+  <img  src="https://i.imgur.com/xG0py5w.png">
   <p>Cerrando desde la barra de tareas</p>
 </div>
 
