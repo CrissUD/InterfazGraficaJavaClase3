@@ -98,15 +98,15 @@ Muchas veces se quieren colores personalizados que Java no trae por defecto y pa
 * **Declaración**
 ```javascript
 // Al inicio de la clase
-private Color colorAzul, colorGrisOscuro;
+private Color colorPrincipal, colorGrisOscuro;
 ```
 
-La variable (objeto) que se coloca para los objetos Color empezará con color en minúscula seguido del nombre de la variable.
+La variable (objeto) que se coloca para los objetos Color empezará con color en minúscula seguido del nombre de la variable. También es recomendable no llamar a los colores con el color a representar a menos de que sea un color demasiado especifico, de esta forma si existe un color que esta en muchas partes del proyecto y cambia por algún motivo, el nombre **colorPrincipal** sigue teniendo valides. Algunas excepciones pueden ser colores en escala de grises o colores con un propósito muy especifico.
 
 * **Ejemplificación**
 ```javascript
 // Dentro del constructor
-colorAzul = new Color(60, 78, 120);
+colorPrincipal = new Color(60, 78, 120);
 colorGrisOscuro = new Color(80, 80, 80);
 ```
 
@@ -115,9 +115,9 @@ Se puede observar que la notación para la configuración de un color esta basad
 * **Incorporación**
 ```javascript
 // Dentro del constructor
-tNombreUsuario.setForeground(colorGrisOscuro);
+tNombreUsuario.setForeground(colorPrincipal);
 tNombreUsuario.setBackground(Color.WHITE);
-tNombreUsuario.setCaretColor(colorAzul);
+tNombreUsuario.setCaretColor(colorGrisOscuro);
 ```
 
 En el anterior código se ve reflejada la incorporación de varios objetos de tipo Color para un TextField, siendo algunos de estos creados por el desarrollador y otros que vienen por defecto en Java.
@@ -143,18 +143,18 @@ lTituloLogin.setForeground(colorGrisOscuro);
 
 lNotificaciones.setForeground(colorGrisOscuro);
 
-tNombreUsuario.setForeground(colorAzul);
+tNombreUsuario.setForeground(colorPrincipal);
 tNombreUsuario.setCaretColor(colorGrisOscuro);
 
-tClaveUsuario.setForeground(colorAzul);
+tClaveUsuario.setForeground(colorPrincipal);
 tClaveUsuario.setCaretColor(colorGrisOscuro);
 
-cbTipoUsuario.setForeground(colorAzul);
+cbTipoUsuario.setForeground(colorPrincipal);
 
-bEntrar.setBackground(colorAzul);
+bEntrar.setBackground(colorPrincipal);
 bEntrar.setForeground(Color.WHITE);
 
-bRegistrarse.setBackground(colorAzul);
+bRegistrarse.setBackground(colorPrincipal);
 bRegistrarse.setForeground(Color.WHITE);
 ```
 
@@ -430,7 +430,7 @@ import javax.swing.BorderFactory;
 Dibuja en los limites del objeto gráfico un borde con una linea:
 
 ```javascript
-border = BorderFactory.createLineBorder(colorAzul, 2, true);
+border = BorderFactory.createLineBorder(colorPrincipal, 2, true);
 ```
 
 Se puede observar que para crear un borde se debe llamar primero a la clase **BorderFactory** y seleccionar el método **createLineBorder**.
@@ -556,7 +556,7 @@ Este recibe por parámetros:
 Este es uno de los bordes más usados y aunque su configuración es simple se puede sacar gran provecho de este. Dibuja una linea en los lados que se le indique, por ejemplo para un panel en la parte izquierda seria bueno un borde en la parte derecha nada mas indicando la separación y con este tipo de Border se puede lograr.
 
 ```javascript
-border = BorderFactory.createMatteBorder(0, 0, 3, 0, colorAzul);
+border = BorderFactory.createMatteBorder(0, 0, 3, 0, colorPrincipal);
 ```
 
 Se puede observar que para crear el borde se debe llamar primero a la clase **BorderFactory** y seleccionar el método **createMatteBorder**.
@@ -580,7 +580,7 @@ Este recibe por parámetros:
 Dibuja un tipo de borde con una linea punteada o intermitente para limitar el objeto gráfico.
 
 ```javascript
-border = BorderFactory.createDashedBorder(colorAzul, 2, 3, 2, true);
+border = BorderFactory.createDashedBorder(colorPrincipal, 2, 3, 2, true);
 ```
 
 Se observa que para crear el borde se debe llamar primero a la clase **BorderFactory** y seleccionar el método **createDashedBorder**.
@@ -645,7 +645,7 @@ ___
 A continuación se muestra el borde que se usa para la ventana y las incorporaciones de este en el código. También mostraremos algunas correcciones en la posición de los objetos gráficos para que tengan un mejor aspecto con la incorporación del borde. Recordar que aquí se muestra todo junto, sin embargo en el código estas incorporaciones se hacen en orden en la respectiva configuración de su objeto gráfico.
 
 ```javascript
-bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2, 0, colorAzul);
+bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2, 0, colorPrincipal);
 ```
 
 ```javascript

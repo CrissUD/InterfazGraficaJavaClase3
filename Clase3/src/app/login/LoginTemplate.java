@@ -39,7 +39,7 @@ public class LoginTemplate extends JFrame {
   private ButtonGroup grupo;
 
   // Declaración objetos Decoradores
-  private Color colorAzul, colorGrisOscuro;
+  private Color colorPrincipal, colorGrisOscuro;
   // private Color colorNegroTransparente;
   private Font fontTPrincipal, fontTitulo, fontSubtitulo;
   // private Font fontMediana;
@@ -51,7 +51,7 @@ public class LoginTemplate extends JFrame {
   public LoginTemplate() {
     this.generarFuentes();
 
-    colorAzul = new Color(60, 78, 120);
+    colorPrincipal = new Color(60, 78, 120);
     colorGrisOscuro = new Color(80, 80, 80);
     // colorNegroTransparente = new Color(30, 30, 30, 30);
     fontTPrincipal = new Font("Rockwell Extra Bold", Font.PLAIN, 20);
@@ -59,7 +59,7 @@ public class LoginTemplate extends JFrame {
     fontSubtitulo = new Font("Forte", Font.PLAIN, 13);
     // fontMediana = new Font("LuzSans-Book", Font.PLAIN, 15);
     cMano = new Cursor(Cursor.HAND_CURSOR);
-    bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2, 0, colorAzul);
+    bInferiorAzul = BorderFactory.createMatteBorder(0, 0, 2, 0, colorPrincipal);
     iFondo = new ImageIcon("Clase3/resources/images/fondo.png");
     iLogo = new ImageIcon("Clase3/resources/images/logo.png");
     iUsuario2 = new ImageIcon("Clase3/resources/images/usuario2.png");
@@ -158,7 +158,7 @@ public class LoginTemplate extends JFrame {
     tNombreUsuario = new JTextField("Nombre Usuario");
     tNombreUsuario.setSize(260, 40);
     tNombreUsuario.setLocation((pDerecha.getWidth() - tNombreUsuario.getWidth()) / 2, 130);
-    tNombreUsuario.setForeground(colorAzul);
+    tNombreUsuario.setForeground(colorPrincipal);
     tNombreUsuario.setBackground(Color.WHITE);
     tNombreUsuario.setCaretColor(colorGrisOscuro);
     tNombreUsuario.setBorder(bInferiorAzul);
@@ -168,7 +168,7 @@ public class LoginTemplate extends JFrame {
     tClaveUsuario = new JPasswordField("Clave Usuario");
     tClaveUsuario.setSize(260, 40);
     tClaveUsuario.setLocation((pDerecha.getWidth() - tClaveUsuario.getWidth()) / 2, 260);
-    tClaveUsuario.setForeground(colorAzul);
+    tClaveUsuario.setForeground(colorPrincipal);
     tClaveUsuario.setCaretColor(colorGrisOscuro);
     tClaveUsuario.setBorder(bInferiorAzul);
     tClaveUsuario.setHorizontalAlignment(SwingConstants.CENTER);
@@ -180,7 +180,7 @@ public class LoginTemplate extends JFrame {
     cbTipoUsuario.addItem("Administrador");
     cbTipoUsuario.setSize(220, 30);
     cbTipoUsuario.setLocation((pDerecha.getWidth() - cbTipoUsuario.getWidth()) / 2, 210);
-    cbTipoUsuario.setForeground(colorAzul);
+    cbTipoUsuario.setForeground(colorPrincipal);
     cbTipoUsuario.setBackground(Color.WHITE);
     ((JLabel) cbTipoUsuario.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
     pDerecha.add(cbTipoUsuario);
@@ -189,7 +189,7 @@ public class LoginTemplate extends JFrame {
     bEntrar.setSize(250, 45);
     bEntrar.setLocation((pDerecha.getWidth() - bEntrar.getWidth()) / 2, 330);
     bEntrar.setFocusable(false);
-    bEntrar.setBackground(colorAzul);
+    bEntrar.setBackground(colorPrincipal);
     bEntrar.setForeground(Color.WHITE);
     bEntrar.setCursor(cMano);
     pDerecha.add(bEntrar);
@@ -197,7 +197,7 @@ public class LoginTemplate extends JFrame {
     bRegistrarse = new JButton("Registrarse");
     bRegistrarse.setBounds(240, 460, 145, 35);
     bRegistrarse.setFocusable(false);
-    bRegistrarse.setBackground(colorAzul);
+    bRegistrarse.setBackground(colorPrincipal);
     bRegistrarse.setForeground(Color.WHITE);
     bRegistrarse.setCursor(cMano);
     pDerecha.add(bRegistrarse);
